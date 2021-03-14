@@ -40,5 +40,16 @@ namespace RegistroActivos
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void fechaHora_Tick(object sender, EventArgs e)
+        {
+            labelHora.Text = DateTime.Now.ToLongTimeString();
+            labelFecha.Text = DateTime.Now.ToLongDateString();
+        }
     }
 }

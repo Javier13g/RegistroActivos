@@ -1,0 +1,9 @@
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\bin\Release\RegistroActivos.exe.config
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\bin\Release\RegistroActivos.exe
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\bin\Release\RegistroActivos.pdb
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Release\RegistroActivos.csprojResolveAssemblyReference.cache
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Release\RegistroActivos.FormPrincipal.resources
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Release\RegistroActivos.Properties.Resources.resources
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Release\RegistroActivos.csproj.GenerateResource.Cache
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Release\RegistroActivos.exe
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Release\RegistroActivos.pdb
