@@ -7,3 +7,4 @@ C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Debug
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Debug\RegistroActivos.csproj.GenerateResource.Cache
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Debug\RegistroActivos.exe
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Debug\RegistroActivos.pdb
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Debug\RegistroActivos.FormUsuario.resources

@@ -37,22 +37,29 @@
             this.BotonMaximizar = new System.Windows.Forms.PictureBox();
             this.BotonCerrar = new System.Windows.Forms.PictureBox();
             this.Menu = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.botonPatente = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.botonMaquinaria = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.botonEdificaciones = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.botonVehiculo = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTerrenos = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelHora = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
             this.fechaHora = new System.Windows.Forms.Timer(this.components);
-            this.btnTerrenos = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.botonVehiculo = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.botonEdificaciones = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.botonMaquinaria = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.botonPatente = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.botonUsuario = new System.Windows.Forms.Button();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.labelCorreo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.botonAyuda = new System.Windows.Forms.Button();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BotonRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BotonMinimizar)).BeginInit();
@@ -77,6 +84,7 @@
             this.BarraTitulo.Name = "BarraTitulo";
             this.BarraTitulo.Size = new System.Drawing.Size(1300, 38);
             this.BarraTitulo.TabIndex = 0;
+            this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
             // labelTitulo
             // 
@@ -88,6 +96,7 @@
             this.labelTitulo.Size = new System.Drawing.Size(268, 30);
             this.labelTitulo.TabIndex = 4;
             this.labelTitulo.Text = "Registro de Activos Fijos";
+            this.labelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelTitulo_MouseDown);
             // 
             // BotonRestaurar
             // 
@@ -141,6 +150,13 @@
             // Menu
             // 
             this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.Menu.Controls.Add(this.panel7);
+            this.Menu.Controls.Add(this.botonAyuda);
+            this.Menu.Controls.Add(this.label1);
+            this.Menu.Controls.Add(this.labelCorreo);
+            this.Menu.Controls.Add(this.labelNombre);
+            this.Menu.Controls.Add(this.panel6);
+            this.Menu.Controls.Add(this.botonUsuario);
             this.Menu.Controls.Add(this.panel5);
             this.Menu.Controls.Add(this.botonPatente);
             this.Menu.Controls.Add(this.panel4);
@@ -158,10 +174,135 @@
             this.Menu.Size = new System.Drawing.Size(200, 612);
             this.Menu.TabIndex = 1;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel5.Location = new System.Drawing.Point(0, 380);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(12, 32);
+            this.panel5.TabIndex = 10;
+            // 
+            // botonPatente
+            // 
+            this.botonPatente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.botonPatente.FlatAppearance.BorderSize = 0;
+            this.botonPatente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.botonPatente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPatente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPatente.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.botonPatente.Image = ((System.Drawing.Image)(resources.GetObject("botonPatente.Image")));
+            this.botonPatente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonPatente.Location = new System.Drawing.Point(12, 380);
+            this.botonPatente.Name = "botonPatente";
+            this.botonPatente.Size = new System.Drawing.Size(188, 32);
+            this.botonPatente.TabIndex = 11;
+            this.botonPatente.Text = "Patentes";
+            this.botonPatente.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel4.Location = new System.Drawing.Point(0, 335);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(12, 32);
+            this.panel4.TabIndex = 8;
+            // 
+            // botonMaquinaria
+            // 
+            this.botonMaquinaria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.botonMaquinaria.FlatAppearance.BorderSize = 0;
+            this.botonMaquinaria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.botonMaquinaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonMaquinaria.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonMaquinaria.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.botonMaquinaria.Image = ((System.Drawing.Image)(resources.GetObject("botonMaquinaria.Image")));
+            this.botonMaquinaria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonMaquinaria.Location = new System.Drawing.Point(12, 335);
+            this.botonMaquinaria.Name = "botonMaquinaria";
+            this.botonMaquinaria.Size = new System.Drawing.Size(188, 32);
+            this.botonMaquinaria.TabIndex = 9;
+            this.botonMaquinaria.Text = "Maquinaria";
+            this.botonMaquinaria.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel3.Location = new System.Drawing.Point(0, 290);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(12, 32);
+            this.panel3.TabIndex = 6;
+            // 
+            // botonEdificaciones
+            // 
+            this.botonEdificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.botonEdificaciones.FlatAppearance.BorderSize = 0;
+            this.botonEdificaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.botonEdificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonEdificaciones.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonEdificaciones.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.botonEdificaciones.Image = ((System.Drawing.Image)(resources.GetObject("botonEdificaciones.Image")));
+            this.botonEdificaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonEdificaciones.Location = new System.Drawing.Point(12, 290);
+            this.botonEdificaciones.Name = "botonEdificaciones";
+            this.botonEdificaciones.Size = new System.Drawing.Size(188, 32);
+            this.botonEdificaciones.TabIndex = 7;
+            this.botonEdificaciones.Text = "Edificaciones";
+            this.botonEdificaciones.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel2.Location = new System.Drawing.Point(0, 246);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(12, 32);
+            this.panel2.TabIndex = 4;
+            // 
+            // botonVehiculo
+            // 
+            this.botonVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.botonVehiculo.FlatAppearance.BorderSize = 0;
+            this.botonVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.botonVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonVehiculo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonVehiculo.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.botonVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("botonVehiculo.Image")));
+            this.botonVehiculo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.botonVehiculo.Location = new System.Drawing.Point(12, 246);
+            this.botonVehiculo.Name = "botonVehiculo";
+            this.botonVehiculo.Size = new System.Drawing.Size(188, 32);
+            this.botonVehiculo.TabIndex = 5;
+            this.botonVehiculo.Text = "Vehiculos";
+            this.botonVehiculo.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel1.Location = new System.Drawing.Point(0, 204);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(12, 32);
+            this.panel1.TabIndex = 3;
+            // 
+            // btnTerrenos
+            // 
+            this.btnTerrenos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnTerrenos.FlatAppearance.BorderSize = 0;
+            this.btnTerrenos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnTerrenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTerrenos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerrenos.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnTerrenos.Image = ((System.Drawing.Image)(resources.GetObject("btnTerrenos.Image")));
+            this.btnTerrenos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTerrenos.Location = new System.Drawing.Point(12, 204);
+            this.btnTerrenos.Name = "btnTerrenos";
+            this.btnTerrenos.Size = new System.Drawing.Size(188, 32);
+            this.btnTerrenos.TabIndex = 3;
+            this.btnTerrenos.Text = "Terrenos";
+            this.btnTerrenos.UseVisualStyleBackColor = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 16);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(172, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -220,130 +361,89 @@
             this.fechaHora.Enabled = true;
             this.fechaHora.Tick += new System.EventHandler(this.fechaHora_Tick);
             // 
-            // btnTerrenos
+            // panel6
             // 
-            this.btnTerrenos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnTerrenos.FlatAppearance.BorderSize = 0;
-            this.btnTerrenos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnTerrenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTerrenos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerrenos.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnTerrenos.Image = ((System.Drawing.Image)(resources.GetObject("btnTerrenos.Image")));
-            this.btnTerrenos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTerrenos.Location = new System.Drawing.Point(12, 111);
-            this.btnTerrenos.Name = "btnTerrenos";
-            this.btnTerrenos.Size = new System.Drawing.Size(188, 32);
-            this.btnTerrenos.TabIndex = 3;
-            this.btnTerrenos.Text = "Terrenos";
-            this.btnTerrenos.UseVisualStyleBackColor = false;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel6.Location = new System.Drawing.Point(0, 424);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(12, 32);
+            this.panel6.TabIndex = 12;
             // 
-            // panel1
+            // botonUsuario
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel1.Location = new System.Drawing.Point(0, 111);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(12, 32);
-            this.panel1.TabIndex = 3;
+            this.botonUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.botonUsuario.FlatAppearance.BorderSize = 0;
+            this.botonUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.botonUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonUsuario.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.botonUsuario.Image = ((System.Drawing.Image)(resources.GetObject("botonUsuario.Image")));
+            this.botonUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonUsuario.Location = new System.Drawing.Point(12, 424);
+            this.botonUsuario.Name = "botonUsuario";
+            this.botonUsuario.Size = new System.Drawing.Size(188, 32);
+            this.botonUsuario.TabIndex = 13;
+            this.botonUsuario.Text = "Usuarios";
+            this.botonUsuario.UseVisualStyleBackColor = false;
+            this.botonUsuario.Click += new System.EventHandler(this.botonUsuario_Click);
             // 
-            // panel2
+            // labelNombre
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel2.Location = new System.Drawing.Point(0, 153);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(12, 32);
-            this.panel2.TabIndex = 4;
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.labelNombre.Location = new System.Drawing.Point(36, 104);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(126, 18);
+            this.labelNombre.TabIndex = 3;
+            this.labelNombre.Text = "Nombre Usuario";
             // 
-            // botonVehiculo
+            // labelCorreo
             // 
-            this.botonVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.botonVehiculo.FlatAppearance.BorderSize = 0;
-            this.botonVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.botonVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonVehiculo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonVehiculo.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.botonVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("botonVehiculo.Image")));
-            this.botonVehiculo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.botonVehiculo.Location = new System.Drawing.Point(12, 153);
-            this.botonVehiculo.Name = "botonVehiculo";
-            this.botonVehiculo.Size = new System.Drawing.Size(188, 32);
-            this.botonVehiculo.TabIndex = 5;
-            this.botonVehiculo.Text = "Vehiculos";
-            this.botonVehiculo.UseVisualStyleBackColor = false;
+            this.labelCorreo.AutoSize = true;
+            this.labelCorreo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorreo.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.labelCorreo.Location = new System.Drawing.Point(67, 135);
+            this.labelCorreo.Name = "labelCorreo";
+            this.labelCorreo.Size = new System.Drawing.Size(60, 18);
+            this.labelCorreo.TabIndex = 14;
+            this.labelCorreo.Text = "Correo";
             // 
-            // panel3
+            // label1
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel3.Location = new System.Drawing.Point(0, 197);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(12, 32);
-            this.panel3.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Location = new System.Drawing.Point(67, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 18);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Cargo";
             // 
-            // botonEdificaciones
+            // panel7
             // 
-            this.botonEdificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.botonEdificaciones.FlatAppearance.BorderSize = 0;
-            this.botonEdificaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.botonEdificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonEdificaciones.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonEdificaciones.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.botonEdificaciones.Image = ((System.Drawing.Image)(resources.GetObject("botonEdificaciones.Image")));
-            this.botonEdificaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonEdificaciones.Location = new System.Drawing.Point(12, 197);
-            this.botonEdificaciones.Name = "botonEdificaciones";
-            this.botonEdificaciones.Size = new System.Drawing.Size(188, 32);
-            this.botonEdificaciones.TabIndex = 7;
-            this.botonEdificaciones.Text = "Edificaciones";
-            this.botonEdificaciones.UseVisualStyleBackColor = false;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel7.Location = new System.Drawing.Point(0, 465);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(12, 32);
+            this.panel7.TabIndex = 16;
             // 
-            // panel4
+            // botonAyuda
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel4.Location = new System.Drawing.Point(0, 242);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(12, 32);
-            this.panel4.TabIndex = 8;
-            // 
-            // botonMaquinaria
-            // 
-            this.botonMaquinaria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.botonMaquinaria.FlatAppearance.BorderSize = 0;
-            this.botonMaquinaria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.botonMaquinaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonMaquinaria.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonMaquinaria.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.botonMaquinaria.Image = ((System.Drawing.Image)(resources.GetObject("botonMaquinaria.Image")));
-            this.botonMaquinaria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonMaquinaria.Location = new System.Drawing.Point(12, 242);
-            this.botonMaquinaria.Name = "botonMaquinaria";
-            this.botonMaquinaria.Size = new System.Drawing.Size(188, 32);
-            this.botonMaquinaria.TabIndex = 9;
-            this.botonMaquinaria.Text = "Maquinaria";
-            this.botonMaquinaria.UseVisualStyleBackColor = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel5.Location = new System.Drawing.Point(0, 287);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(12, 32);
-            this.panel5.TabIndex = 10;
-            // 
-            // botonPatente
-            // 
-            this.botonPatente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.botonPatente.FlatAppearance.BorderSize = 0;
-            this.botonPatente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.botonPatente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPatente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPatente.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.botonPatente.Image = ((System.Drawing.Image)(resources.GetObject("botonPatente.Image")));
-            this.botonPatente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonPatente.Location = new System.Drawing.Point(12, 287);
-            this.botonPatente.Name = "botonPatente";
-            this.botonPatente.Size = new System.Drawing.Size(188, 32);
-            this.botonPatente.TabIndex = 11;
-            this.botonPatente.Text = "Patentes";
-            this.botonPatente.UseVisualStyleBackColor = false;
+            this.botonAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.botonAyuda.FlatAppearance.BorderSize = 0;
+            this.botonAyuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.botonAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonAyuda.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAyuda.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.botonAyuda.Image = ((System.Drawing.Image)(resources.GetObject("botonAyuda.Image")));
+            this.botonAyuda.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.botonAyuda.Location = new System.Drawing.Point(12, 465);
+            this.botonAyuda.Name = "botonAyuda";
+            this.botonAyuda.Size = new System.Drawing.Size(188, 32);
+            this.botonAyuda.TabIndex = 17;
+            this.botonAyuda.Text = "Ayuda";
+            this.botonAyuda.UseVisualStyleBackColor = false;
             // 
             // FormPrincipal
             // 
@@ -363,6 +463,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BotonMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BotonCerrar)).EndInit();
             this.Menu.ResumeLayout(false);
+            this.Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
@@ -396,6 +497,13 @@
         private System.Windows.Forms.Button botonMaquinaria;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button botonPatente;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelCorreo;
+        private System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button botonUsuario;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button botonAyuda;
     }
 }
 
