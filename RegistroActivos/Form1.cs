@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaSoporte.Cache;
 
 namespace RegistroActivos
 {
@@ -20,7 +21,9 @@ namespace RegistroActivos
 
         private void BotonCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("¿Estás seguro de salir?", "Warning",
+          MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void BotonMaximizar_Click(object sender, EventArgs e)
@@ -70,8 +73,8 @@ namespace RegistroActivos
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        //FUNCION QUE ABRE FORM USUARIO
-        private void AbrirFormUsuario(object formUs) 
+        //FUNCION QUE ABRE FORMS 
+        private void AbrirForms(object formUs) 
         {
             if (this.panelContenedor.Controls.Count > 0)
                 this.panelContenedor.Controls.RemoveAt(0);
@@ -86,9 +89,84 @@ namespace RegistroActivos
         private void botonUsuario_Click(object sender, EventArgs e)
         {
             //LLAMADA DE LA FUNCION AbrirFormUsuario
-            AbrirFormUsuario(new FormUsuario()); 
+            AbrirForms(new FormUsuario()); 
             labelHora.Visible = false;
             labelFecha.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirForms(new INICIAL());
+        }
+
+        private void btnTerrenos_Click(object sender, EventArgs e)
+        {
+            AbrirForms(new FormTerrenos());
+            labelHora.Visible = false;
+            labelFecha.Visible = false;
+        }
+
+        private void botonVehiculo_Click(object sender, EventArgs e)
+        {
+            AbrirForms(new FormVehiculos());
+            labelHora.Visible = false;
+            labelFecha.Visible = false;
+        }
+
+        private void botonEdificaciones_Click(object sender, EventArgs e)
+        {
+            AbrirForms(new FormEdificacion());
+            labelHora.Visible = false;
+            labelFecha.Visible = false;
+        }
+
+        private void botonPatente_Click(object sender, EventArgs e)
+        {
+            AbrirForms(new FormPatente());
+            labelHora.Visible = false;
+            labelFecha.Visible = false;
+        }
+
+        private void botonMaquinaria_Click(object sender, EventArgs e)
+        {
+            AbrirForms(new FormMaquinaria());
+            labelHora.Visible = false;
+            labelFecha.Visible = false;
+        }
+
+        private void botonAcerdaDe_Click(object sender, EventArgs e)
+        {
+            AbrirForms(new FormAcerdaDe());
+            labelHora.Visible = false;
+            labelFecha.Visible = false;
+        }
+
+        private void botonAyuda_Click(object sender, EventArgs e)
+        {
+            AbrirForms(new FormAyuda());
+            labelHora.Visible = false;
+            labelFecha.Visible = false;
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+           if (MessageBox.Show("Estas seguro de cerrar sesion?", "Warning",
+           MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
+        }
+
+        
+
+        private void CargarDatosUsuario()
+        {
+            labelNombre.Text = CacheUsuario.Nombre;
+            labelCorreo.Text = CacheUsuario.Correo;
+            labelCargo.Text = CacheUsuario.Cargo;
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            CargarDatosUsuario();
         }
     }
 }

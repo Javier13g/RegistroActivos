@@ -37,6 +37,16 @@
             this.BotonMaximizar = new System.Windows.Forms.PictureBox();
             this.BotonCerrar = new System.Windows.Forms.PictureBox();
             this.Menu = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.botonAcerdaDe = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.botonAyuda = new System.Windows.Forms.Button();
+            this.labelCargo = new System.Windows.Forms.Label();
+            this.labelCorreo = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.botonUsuario = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.botonPatente = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -53,19 +63,13 @@
             this.labelHora = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
             this.fechaHora = new System.Windows.Forms.Timer(this.components);
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.botonUsuario = new System.Windows.Forms.Button();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.labelCorreo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.botonAyuda = new System.Windows.Forms.Button();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BotonRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BotonMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BotonMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BotonCerrar)).BeginInit();
             this.Menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -150,9 +154,12 @@
             // Menu
             // 
             this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.Menu.Controls.Add(this.btnCerrarSesion);
+            this.Menu.Controls.Add(this.panel8);
+            this.Menu.Controls.Add(this.botonAcerdaDe);
             this.Menu.Controls.Add(this.panel7);
             this.Menu.Controls.Add(this.botonAyuda);
-            this.Menu.Controls.Add(this.label1);
+            this.Menu.Controls.Add(this.labelCargo);
             this.Menu.Controls.Add(this.labelCorreo);
             this.Menu.Controls.Add(this.labelNombre);
             this.Menu.Controls.Add(this.panel6);
@@ -173,6 +180,129 @@
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(200, 612);
             this.Menu.TabIndex = 1;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
+            this.btnCerrarSesion.Location = new System.Drawing.Point(48, 559);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(100, 50);
+            this.btnCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrarSesion.TabIndex = 21;
+            this.btnCerrarSesion.TabStop = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel8.Location = new System.Drawing.Point(0, 509);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(12, 32);
+            this.panel8.TabIndex = 19;
+            // 
+            // botonAcerdaDe
+            // 
+            this.botonAcerdaDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.botonAcerdaDe.FlatAppearance.BorderSize = 0;
+            this.botonAcerdaDe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.botonAcerdaDe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonAcerdaDe.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAcerdaDe.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.botonAcerdaDe.Image = ((System.Drawing.Image)(resources.GetObject("botonAcerdaDe.Image")));
+            this.botonAcerdaDe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonAcerdaDe.Location = new System.Drawing.Point(12, 509);
+            this.botonAcerdaDe.Name = "botonAcerdaDe";
+            this.botonAcerdaDe.Size = new System.Drawing.Size(188, 32);
+            this.botonAcerdaDe.TabIndex = 20;
+            this.botonAcerdaDe.Text = "Acerca de";
+            this.botonAcerdaDe.UseVisualStyleBackColor = false;
+            this.botonAcerdaDe.Click += new System.EventHandler(this.botonAcerdaDe_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel7.Location = new System.Drawing.Point(0, 465);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(12, 32);
+            this.panel7.TabIndex = 16;
+            // 
+            // botonAyuda
+            // 
+            this.botonAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.botonAyuda.FlatAppearance.BorderSize = 0;
+            this.botonAyuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.botonAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonAyuda.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAyuda.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.botonAyuda.Image = ((System.Drawing.Image)(resources.GetObject("botonAyuda.Image")));
+            this.botonAyuda.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.botonAyuda.Location = new System.Drawing.Point(12, 465);
+            this.botonAyuda.Name = "botonAyuda";
+            this.botonAyuda.Size = new System.Drawing.Size(188, 32);
+            this.botonAyuda.TabIndex = 17;
+            this.botonAyuda.Text = "Ayuda";
+            this.botonAyuda.UseVisualStyleBackColor = false;
+            this.botonAyuda.Click += new System.EventHandler(this.botonAyuda_Click);
+            // 
+            // labelCargo
+            // 
+            this.labelCargo.AutoSize = true;
+            this.labelCargo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCargo.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.labelCargo.Location = new System.Drawing.Point(61, 167);
+            this.labelCargo.Name = "labelCargo";
+            this.labelCargo.Size = new System.Drawing.Size(45, 16);
+            this.labelCargo.TabIndex = 15;
+            this.labelCargo.Text = "Cargo";
+            // 
+            // labelCorreo
+            // 
+            this.labelCorreo.AutoSize = true;
+            this.labelCorreo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorreo.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.labelCorreo.Location = new System.Drawing.Point(10, 135);
+            this.labelCorreo.Name = "labelCorreo";
+            this.labelCorreo.Size = new System.Drawing.Size(49, 16);
+            this.labelCorreo.TabIndex = 14;
+            this.labelCorreo.Text = "Correo";
+            this.labelCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelNombre
+            // 
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.labelNombre.Location = new System.Drawing.Point(66, 104);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(102, 16);
+            this.labelNombre.TabIndex = 3;
+            this.labelNombre.Text = "Nombre Usuario";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel6.Location = new System.Drawing.Point(0, 424);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(12, 32);
+            this.panel6.TabIndex = 12;
+            // 
+            // botonUsuario
+            // 
+            this.botonUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.botonUsuario.FlatAppearance.BorderSize = 0;
+            this.botonUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.botonUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonUsuario.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.botonUsuario.Image = ((System.Drawing.Image)(resources.GetObject("botonUsuario.Image")));
+            this.botonUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonUsuario.Location = new System.Drawing.Point(12, 424);
+            this.botonUsuario.Name = "botonUsuario";
+            this.botonUsuario.Size = new System.Drawing.Size(188, 32);
+            this.botonUsuario.TabIndex = 13;
+            this.botonUsuario.Text = "Usuarios";
+            this.botonUsuario.UseVisualStyleBackColor = false;
+            this.botonUsuario.Click += new System.EventHandler(this.botonUsuario_Click);
             // 
             // panel5
             // 
@@ -198,6 +328,7 @@
             this.botonPatente.TabIndex = 11;
             this.botonPatente.Text = "Patentes";
             this.botonPatente.UseVisualStyleBackColor = false;
+            this.botonPatente.Click += new System.EventHandler(this.botonPatente_Click);
             // 
             // panel4
             // 
@@ -223,6 +354,7 @@
             this.botonMaquinaria.TabIndex = 9;
             this.botonMaquinaria.Text = "Maquinaria";
             this.botonMaquinaria.UseVisualStyleBackColor = false;
+            this.botonMaquinaria.Click += new System.EventHandler(this.botonMaquinaria_Click);
             // 
             // panel3
             // 
@@ -248,6 +380,7 @@
             this.botonEdificaciones.TabIndex = 7;
             this.botonEdificaciones.Text = "Edificaciones";
             this.botonEdificaciones.UseVisualStyleBackColor = false;
+            this.botonEdificaciones.Click += new System.EventHandler(this.botonEdificaciones_Click);
             // 
             // panel2
             // 
@@ -273,6 +406,7 @@
             this.botonVehiculo.TabIndex = 5;
             this.botonVehiculo.Text = "Vehiculos";
             this.botonVehiculo.UseVisualStyleBackColor = false;
+            this.botonVehiculo.Click += new System.EventHandler(this.botonVehiculo_Click);
             // 
             // panel1
             // 
@@ -298,6 +432,7 @@
             this.btnTerrenos.TabIndex = 3;
             this.btnTerrenos.Text = "Terrenos";
             this.btnTerrenos.UseVisualStyleBackColor = false;
+            this.btnTerrenos.Click += new System.EventHandler(this.btnTerrenos_Click);
             // 
             // pictureBox1
             // 
@@ -361,90 +496,6 @@
             this.fechaHora.Enabled = true;
             this.fechaHora.Tick += new System.EventHandler(this.fechaHora_Tick);
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel6.Location = new System.Drawing.Point(0, 424);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(12, 32);
-            this.panel6.TabIndex = 12;
-            // 
-            // botonUsuario
-            // 
-            this.botonUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.botonUsuario.FlatAppearance.BorderSize = 0;
-            this.botonUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.botonUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonUsuario.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.botonUsuario.Image = ((System.Drawing.Image)(resources.GetObject("botonUsuario.Image")));
-            this.botonUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonUsuario.Location = new System.Drawing.Point(12, 424);
-            this.botonUsuario.Name = "botonUsuario";
-            this.botonUsuario.Size = new System.Drawing.Size(188, 32);
-            this.botonUsuario.TabIndex = 13;
-            this.botonUsuario.Text = "Usuarios";
-            this.botonUsuario.UseVisualStyleBackColor = false;
-            this.botonUsuario.Click += new System.EventHandler(this.botonUsuario_Click);
-            // 
-            // labelNombre
-            // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.labelNombre.Location = new System.Drawing.Point(36, 104);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(126, 18);
-            this.labelNombre.TabIndex = 3;
-            this.labelNombre.Text = "Nombre Usuario";
-            // 
-            // labelCorreo
-            // 
-            this.labelCorreo.AutoSize = true;
-            this.labelCorreo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorreo.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.labelCorreo.Location = new System.Drawing.Point(67, 135);
-            this.labelCorreo.Name = "labelCorreo";
-            this.labelCorreo.Size = new System.Drawing.Size(60, 18);
-            this.labelCorreo.TabIndex = 14;
-            this.labelCorreo.Text = "Correo";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(67, 167);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 18);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Cargo";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel7.Location = new System.Drawing.Point(0, 465);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(12, 32);
-            this.panel7.TabIndex = 16;
-            // 
-            // botonAyuda
-            // 
-            this.botonAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.botonAyuda.FlatAppearance.BorderSize = 0;
-            this.botonAyuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.botonAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonAyuda.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonAyuda.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.botonAyuda.Image = ((System.Drawing.Image)(resources.GetObject("botonAyuda.Image")));
-            this.botonAyuda.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.botonAyuda.Location = new System.Drawing.Point(12, 465);
-            this.botonAyuda.Name = "botonAyuda";
-            this.botonAyuda.Size = new System.Drawing.Size(188, 32);
-            this.botonAyuda.TabIndex = 17;
-            this.botonAyuda.Text = "Ayuda";
-            this.botonAyuda.UseVisualStyleBackColor = false;
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,8 +505,10 @@
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.BarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPrincipal";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.BarraTitulo.ResumeLayout(false);
             this.BarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BotonRestaurar)).EndInit();
@@ -464,6 +517,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BotonCerrar)).EndInit();
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
@@ -497,13 +551,16 @@
         private System.Windows.Forms.Button botonMaquinaria;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button botonPatente;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelCargo;
         private System.Windows.Forms.Label labelCorreo;
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button botonUsuario;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button botonAyuda;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button botonAcerdaDe;
+        private System.Windows.Forms.PictureBox btnCerrarSesion;
     }
 }
 

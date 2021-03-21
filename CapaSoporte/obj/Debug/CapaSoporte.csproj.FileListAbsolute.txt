@@ -1,0 +1,5 @@
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaSoporte\bin\Debug\CapaSoporte.dll
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaSoporte\bin\Debug\CapaSoporte.pdb
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaSoporte\obj\Debug\CapaSoporte.csprojResolveAssemblyReference.cache
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaSoporte\obj\Debug\CapaSoporte.dll
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaSoporte\obj\Debug\CapaSoporte.pdb
