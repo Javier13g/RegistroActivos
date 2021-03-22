@@ -13,7 +13,7 @@ namespace RegistroActivos
 {
     public partial class FormTerrenos : Form
     {
-        CN_Terrenos objectoTerreno = new CN_Terrenos();
+        CN_Vehiculos objectoTerreno = new CN_Vehiculos();
         public FormTerrenos()
         {
             InitializeComponent();
@@ -22,11 +22,14 @@ namespace RegistroActivos
         private void FormTerrenos_Load(object sender, EventArgs e)
         {
             MostrarTerrenos();
+            
         }
+
+        
 
         private void MostrarTerrenos()
         {
-            CN_Terrenos objecto = new CN_Terrenos();
+            CN_Vehiculos objecto = new CN_Vehiculos();
             dataGridView1.DataSource = objecto.MostrarTerrenos();
 
         }
@@ -43,11 +46,14 @@ namespace RegistroActivos
                     comboBoxTipo.Text
                     );
                 MessageBox.Show("Se guardo bien jasjdajs");
+                MostrarTerrenos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error debido a: " + ex);
             }
         }
+
+        
     }
 }

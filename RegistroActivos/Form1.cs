@@ -9,11 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaSoporte.Cache;
+using CapaNegocio;
 
 namespace RegistroActivos
 {
     public partial class FormPrincipal : Form
     {
+        CN_Vehiculos objectoTerreno = new CN_Vehiculos();
+        CN_Vehiculo objectovEH = new CN_Vehiculo();
+
         public FormPrincipal()
         {
             InitializeComponent();
@@ -167,14 +171,26 @@ namespace RegistroActivos
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             CargarDatosUsuario();
-
+            cantidadTerrenos();
+            cantidadVeh();
+            
             //MANEJAR CARGOS
-           
+
             if (CacheUsuario.Cargo == Cargos.Empleado)
             {
                 botonUsuario.Enabled = false;
             }
             
+        }
+
+        public void cantidadTerrenos()
+        {
+            dataGridView1.DataSource = objectoTerreno.Cantidad();
+        }
+
+        public void cantidadVeh()
+        {
+            dataGridView2.DataSource = objectovEH.Cantidad();
         }
     }
 }

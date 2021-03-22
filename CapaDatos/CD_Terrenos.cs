@@ -39,5 +39,15 @@ namespace CapaDatos
             comandoTerrenos.Parameters.AddWithValue("@tipo", TipoActivo);
             comandoTerrenos.ExecuteNonQuery();
         }
+
+        public DataTable Cantidad()
+        {
+            comandoTerrenos.Connection = ConexionTerrenos.ConexionAbierta();
+            comandoTerrenos.CommandText = "select count(*) as Cantidad_Terrenos from TERRENOS";
+            leerTerrenos = comandoTerrenos.ExecuteReader();
+            tablaTerrenos.Load(leerTerrenos);
+            ConexionTerrenos.ConexionCerrada();
+            return tablaTerrenos;
+        }
     }
 }
