@@ -41,5 +41,56 @@ namespace CapaDatos
             }
 
         }
+        //
+        public string RecuperarContra(string userRequesting)
+        {
+            using (var conexionForRecovery = GetConexion())
+            {
+                conexionForRecovery.Open();
+                using (var comandoRecovery = new SqlCommand())
+                {
+                    comandoRecovery.Connection = conexionForRecovery;
+                    comandoRecovery.CommandText = "select * from USUARIOS where Nombre_Usuario=@usuario or Correo=@email";
+                    comandoRecovery.Parameters.AddWithValue("@usuario", userRequesting);
+                    comandoRecovery.Parameters.AddWithValue("@email", userRequesting);
+                    comandoRecovery.CommandType = CommandType.Text;
+                    SqlDataReader reader = comandoRecovery.ExecuteReader();
+
+                    if (reader.Read() == true)
+                    {
+                        string userName = reader.GetString(1);
+                        string userMail = reader.GetString(3);
+                        string password = reader.GetString(2);
+
+                        var mailService = new ServiciosCorreo.SoporteSystem();
+                        mailService.sendMail(
+                            subject: "Sistema: Pedido de recuperacion de contrasena",
+                            body: "Hola, "+userName+ "\n You requested to recover you password.\n"+
+                            "your current password is: "+password+
+                            "\nCambie su contrasena una vez inicie en el sistema",
+                            recipientMail: new List<string> { userMail }
+                            );
+                        return "Hi, " + userName + "\nYou Requested to recover your password.\n" +
+                            "\nCambie su contrasena una vez inicie en el sistema";
+                    }
+                    else
+                        return "Sorry, you do not have an account with that mail or username";
+                }
+            }
+        }
+
+
+
+        public void AnyMethod()
+        {
+            if (CacheUsuario.Cargo == Cargos.Administrador)
+            {
+
+            }
+            if (CacheUsuario.Cargo == Cargos.Empleado)
+            {
+
+            }
+        }
     }
 }

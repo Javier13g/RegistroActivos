@@ -1,0 +1,5 @@
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaSoporte\bin\Release\CapaSoporte.dll
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaSoporte\bin\Release\CapaSoporte.pdb
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaSoporte\obj\Release\CapaSoporte.dll
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaSoporte\obj\Release\CapaSoporte.pdb
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaSoporte\obj\Release\CapaSoporte.csprojResolveAssemblyReference.cache

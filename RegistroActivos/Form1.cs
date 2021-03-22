@@ -167,6 +167,14 @@ namespace RegistroActivos
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             CargarDatosUsuario();
+
+            //MANEJAR CARGOS
+           
+            if (CacheUsuario.Cargo == Cargos.Empleado)
+            {
+                botonUsuario.Enabled = false;
+            }
+            
         }
     }
 }
