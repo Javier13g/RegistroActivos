@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMaquinaria));
-            this.btnGuardarEmpleados = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btnAgregarMa = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.TipoActivoMa = new System.Windows.Forms.ComboBox();
@@ -39,37 +41,31 @@
             this.txtValorMaquinaria = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtDimensionEdi = new System.Windows.Forms.TextBox();
+            this.txtTipoMaquinaria = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGuardarEmpleados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregarMa)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnGuardarEmpleados
+            // btnAgregarMa
             // 
-            this.btnGuardarEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarEmpleados.Image")));
-            this.btnGuardarEmpleados.Location = new System.Drawing.Point(2, 389);
-            this.btnGuardarEmpleados.Name = "btnGuardarEmpleados";
-            this.btnGuardarEmpleados.Size = new System.Drawing.Size(142, 88);
-            this.btnGuardarEmpleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnGuardarEmpleados.TabIndex = 84;
-            this.btnGuardarEmpleados.TabStop = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(306, 93);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(754, 416);
-            this.dataGridView1.TabIndex = 83;
+            this.btnAgregarMa.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarMa.Image")));
+            this.btnAgregarMa.Location = new System.Drawing.Point(2, 389);
+            this.btnAgregarMa.Name = "btnAgregarMa";
+            this.btnAgregarMa.Size = new System.Drawing.Size(142, 88);
+            this.btnAgregarMa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAgregarMa.TabIndex = 84;
+            this.btnAgregarMa.TabStop = false;
+            this.btnAgregarMa.Click += new System.EventHandler(this.btnAgregarMa_Click);
             // 
             // label3
             // 
@@ -99,7 +95,8 @@
             this.TipoActivoMa.ForeColor = System.Drawing.SystemColors.Info;
             this.TipoActivoMa.FormattingEnabled = true;
             this.TipoActivoMa.Items.AddRange(new object[] {
-            "si"});
+            "Tangible",
+            "Intangible"});
             this.TipoActivoMa.Location = new System.Drawing.Point(12, 13);
             this.TipoActivoMa.Name = "TipoActivoMa";
             this.TipoActivoMa.Size = new System.Drawing.Size(209, 27);
@@ -147,21 +144,21 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtDimensionEdi);
+            this.panel1.Controls.Add(this.txtTipoMaquinaria);
             this.panel1.Location = new System.Drawing.Point(34, 93);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(235, 60);
             this.panel1.TabIndex = 77;
             // 
-            // txtDimensionEdi
+            // txtTipoMaquinaria
             // 
-            this.txtDimensionEdi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtDimensionEdi.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDimensionEdi.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.txtDimensionEdi.Location = new System.Drawing.Point(13, 15);
-            this.txtDimensionEdi.Name = "txtDimensionEdi";
-            this.txtDimensionEdi.Size = new System.Drawing.Size(208, 30);
-            this.txtDimensionEdi.TabIndex = 0;
+            this.txtTipoMaquinaria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtTipoMaquinaria.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoMaquinaria.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.txtTipoMaquinaria.Location = new System.Drawing.Point(13, 15);
+            this.txtTipoMaquinaria.Name = "txtTipoMaquinaria";
+            this.txtTipoMaquinaria.Size = new System.Drawing.Size(208, 30);
+            this.txtTipoMaquinaria.TabIndex = 0;
             // 
             // label5
             // 
@@ -204,18 +201,58 @@
             this.pictureBox1.TabIndex = 87;
             this.pictureBox1.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.ColumnHeadersHeight = 30;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
+            this.dataGridView1.Location = new System.Drawing.Point(323, 90);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.Size = new System.Drawing.Size(722, 393);
+            this.dataGridView1.TabIndex = 89;
+            // 
             // FormMaquinaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1084, 573);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.btnGuardarEmpleados);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnAgregarMa);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label2);
@@ -225,8 +262,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMaquinaria";
             this.Text = "FormMaquinaria";
-            ((System.ComponentModel.ISupportInitialize)(this.btnGuardarEmpleados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormMaquinaria_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregarMa)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -234,6 +271,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,8 +279,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox btnGuardarEmpleados;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox btnAgregarMa;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox TipoActivoMa;
@@ -251,10 +288,11 @@
         private System.Windows.Forms.TextBox txtValorMaquinaria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtDimensionEdi;
+        private System.Windows.Forms.TextBox txtTipoMaquinaria;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

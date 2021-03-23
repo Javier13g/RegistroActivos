@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD_Edificaciones.cs" />
+    <Compile Include="CD_Maquinaria.cs" />
     <Compile Include="CD_Terrenos.cs" />
     <Compile Include="CD_Vehiculos.cs" />
     <Compile Include="Conexion.cs" />
