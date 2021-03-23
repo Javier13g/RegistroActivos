@@ -111,7 +111,11 @@
             this.comboBoxComb.ForeColor = System.Drawing.SystemColors.Info;
             this.comboBoxComb.FormattingEnabled = true;
             this.comboBoxComb.Items.AddRange(new object[] {
-            "si"});
+            "Gasolina",
+            "Diesel",
+            "Gas",
+            "Gas Natural",
+            "Electrico"});
             this.comboBoxComb.Location = new System.Drawing.Point(12, 13);
             this.comboBoxComb.Name = "comboBoxComb";
             this.comboBoxComb.Size = new System.Drawing.Size(209, 27);
@@ -296,7 +300,8 @@
             this.TipoActivoVeh.ForeColor = System.Drawing.SystemColors.Info;
             this.TipoActivoVeh.FormattingEnabled = true;
             this.TipoActivoVeh.Items.AddRange(new object[] {
-            "si"});
+            "Tangible",
+            "Intangible"});
             this.TipoActivoVeh.Location = new System.Drawing.Point(12, 13);
             this.TipoActivoVeh.Name = "TipoActivoVeh";
             this.TipoActivoVeh.Size = new System.Drawing.Size(209, 27);

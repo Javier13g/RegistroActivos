@@ -108,6 +108,7 @@ namespace RegistroActivos
             AbrirForms(new FormTerrenos());
             labelHora.Visible = false;
             labelFecha.Visible = false;
+            LogoRD.Visible = false;
         }
 
         private void botonVehiculo_Click(object sender, EventArgs e)
@@ -115,6 +116,7 @@ namespace RegistroActivos
             AbrirForms(new FormVehiculos());
             labelHora.Visible = false;
             labelFecha.Visible = false;
+            LogoRD.Visible = false;
         }
 
         private void botonEdificaciones_Click(object sender, EventArgs e)
@@ -122,6 +124,7 @@ namespace RegistroActivos
             AbrirForms(new FormEdificacion());
             labelHora.Visible = false;
             labelFecha.Visible = false;
+            LogoRD.Visible = false;
         }
 
         private void botonPatente_Click(object sender, EventArgs e)
