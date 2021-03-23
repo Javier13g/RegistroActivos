@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CN_Edificacion.cs" />
     <Compile Include="CN_Maquinaria.cs" />
+    <Compile Include="CN_Patentes.cs" />
     <Compile Include="CN_Terrenos.cs" />
     <Compile Include="CN_Vehiculo.cs" />
     <Compile Include="UserModel.cs" />
