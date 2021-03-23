@@ -132,6 +132,7 @@ namespace RegistroActivos
             AbrirForms(new FormPatente());
             labelHora.Visible = false;
             labelFecha.Visible = false;
+            LogoRD.Visible = false;
         }
 
         private void botonMaquinaria_Click(object sender, EventArgs e)
@@ -139,6 +140,7 @@ namespace RegistroActivos
             AbrirForms(new FormMaquinaria());
             labelHora.Visible = false;
             labelFecha.Visible = false;
+            LogoRD.Visible = false;
         }
 
         private void botonAcerdaDe_Click(object sender, EventArgs e)
@@ -146,6 +148,7 @@ namespace RegistroActivos
             AbrirForms(new FormAcerdaDe());
             labelHora.Visible = false;
             labelFecha.Visible = false;
+            LogoRD.Visible = false;
         }
 
         private void botonAyuda_Click(object sender, EventArgs e)
@@ -153,6 +156,7 @@ namespace RegistroActivos
             AbrirForms(new FormAyuda());
             labelHora.Visible = false;
             labelFecha.Visible = false;
+            LogoRD.Visible = false;
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
