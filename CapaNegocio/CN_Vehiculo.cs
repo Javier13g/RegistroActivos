@@ -33,6 +33,29 @@ namespace CapaNegocio
                 );
         }
 
+        public void EditarVehiculos(string marca, string modelo,
+            string year, string tipo, string combustible, float valor, string activo,
+            int ID_Vehiculo)
+        {
+            objectVehiculos.EditarVehiculos(
+                marca,
+                modelo,
+                year,
+                tipo,
+                combustible,
+                valor,
+                activo,
+                ID_Vehiculo
+                );
+        }
+
+        public void EliminarVehiculos(int ID_Vehiculo)
+        {
+            objectVehiculos.EliminarVehiculos(
+                ID_Vehiculo
+                );
+        }
+
         public DataTable Cantidad()
         {
             DataTable TablaVehiculos = new DataTable();
