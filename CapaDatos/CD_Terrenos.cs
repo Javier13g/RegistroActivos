@@ -38,6 +38,33 @@ namespace CapaDatos
             comandoTerrenos.Parameters.AddWithValue("@valor", Valor);
             comandoTerrenos.Parameters.AddWithValue("@tipo", TipoActivo);
             comandoTerrenos.ExecuteNonQuery();
+            comandoTerrenos.Parameters.Clear();
+        }
+
+        public void EditarTerrenos(decimal Dimension, string Matricula,
+            string Catastral, decimal Valor, string TipoActivo, int ID_Terreno)
+        {
+            comandoTerrenos.Connection = ConexionTerrenos.ConexionAbierta();
+            comandoTerrenos.CommandText = "EditarTerreno";
+            comandoTerrenos.CommandType = CommandType.StoredProcedure;
+            comandoTerrenos.Parameters.AddWithValue("@tamaño", Dimension);
+            comandoTerrenos.Parameters.AddWithValue("@matricula", Matricula);
+            comandoTerrenos.Parameters.AddWithValue("@catastral", Catastral);
+            comandoTerrenos.Parameters.AddWithValue("@valor", Valor);
+            comandoTerrenos.Parameters.AddWithValue("@tipo", TipoActivo);
+            comandoTerrenos.Parameters.AddWithValue("@id", ID_Terreno);
+            comandoTerrenos.ExecuteNonQuery();
+            comandoTerrenos.Parameters.Clear();
+        }
+
+        public void EliminarTerrenos(int ID_Terreno)
+        {
+            comandoTerrenos.Connection = ConexionTerrenos.ConexionAbierta();
+            comandoTerrenos.CommandText = "EliminarTerreno";
+            comandoTerrenos.CommandType = CommandType.StoredProcedure;
+            comandoTerrenos.Parameters.AddWithValue("@id", ID_Terreno);
+            comandoTerrenos.ExecuteNonQuery();
+            comandoTerrenos.Parameters.Clear();
         }
 
         public DataTable Cantidad()

@@ -31,6 +31,26 @@ namespace CapaNegocio
                 );
         }
 
+        public void EditarTerrenos(decimal Dimension, string Matricula,
+            string Catastral, decimal Valor, string TipoActivo, int ID_Terreno)
+        {
+            objectTerrenos.EditarTerrenos(
+                Dimension,
+                Matricula,
+                Catastral,
+                Valor,
+                TipoActivo,
+                ID_Terreno
+                );
+        }
+
+        public void EliminarTerrenos(int ID_Terreno)
+        {
+            objectTerrenos.EliminarTerrenos(
+                ID_Terreno
+                );
+        }
+
         public DataTable Cantidad()
         {
             DataTable TablaTerrenos = new DataTable();
