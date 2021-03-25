@@ -28,5 +28,23 @@ namespace CapaNegocio
                 tipo
                 );
         }
+
+        public void EditarMaquinaria(string tipoMaquina, float valor, string tipo,
+            int ID_Maquinaria)
+        {
+            objectMaquinaria.EditarMaquinaria(
+                tipoMaquina,
+                valor,
+                tipo,
+                ID_Maquinaria
+                );
+        }
+
+        public void EliminarMaquinaria(int ID_Maquinaria)
+        {
+            objectMaquinaria.EliminarMaquinaria(
+                ID_Maquinaria
+                );
+        }
     }
 }

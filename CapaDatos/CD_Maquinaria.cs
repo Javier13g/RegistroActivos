@@ -35,6 +35,33 @@ namespace CapaDatos
             comandoMaquinaria.Parameters.AddWithValue("@valor", valor);
             comandoMaquinaria.Parameters.AddWithValue("@tipo", tipo);
             comandoMaquinaria.ExecuteNonQuery();
+            comandoMaquinaria.Parameters.Clear();
+        }
+
+        public void EditarMaquinaria(string tipoMaquina, float valor, string tipo,
+            int ID_Maquinaria )
+        {
+            comandoMaquinaria.Connection = ConexionMaquinaria.ConexionAbierta();
+            comandoMaquinaria.CommandText = "EditarMaquinaria";
+            comandoMaquinaria.CommandType = CommandType.StoredProcedure;
+            comandoMaquinaria.Parameters.AddWithValue("@tipoM", tipoMaquina);
+            comandoMaquinaria.Parameters.AddWithValue("@valor", valor);
+            comandoMaquinaria.Parameters.AddWithValue("@tipo", tipo);
+            comandoMaquinaria.Parameters.AddWithValue("@id", ID_Maquinaria);
+            comandoMaquinaria.ExecuteNonQuery();
+            comandoMaquinaria.Parameters.Clear();
+
+        }
+
+        public void EliminarMaquinaria(int ID_Maquinaria)
+        {
+            comandoMaquinaria.Connection = ConexionMaquinaria.ConexionAbierta();
+            comandoMaquinaria.CommandText = "EliminarMaquinaria";
+            comandoMaquinaria.CommandType = CommandType.StoredProcedure;
+            comandoMaquinaria.Parameters.AddWithValue("@id", ID_Maquinaria);
+            comandoMaquinaria.ExecuteNonQuery();
+            comandoMaquinaria.Parameters.Clear();
+
         }
     }
 }

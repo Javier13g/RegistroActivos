@@ -44,15 +44,15 @@
             this.txtTipoMaquinaria = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEliminarMa = new System.Windows.Forms.PictureBox();
+            this.btnEditarMa = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarMa)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminarMa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditarMa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,7 +136,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(80, 63);
+            this.label1.Location = new System.Drawing.Point(69, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 27);
             this.label1.TabIndex = 78;
@@ -145,7 +145,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.txtTipoMaquinaria);
-            this.panel1.Location = new System.Drawing.Point(34, 93);
+            this.panel1.Location = new System.Drawing.Point(23, 93);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(235, 60);
             this.panel1.TabIndex = 77;
@@ -181,25 +181,27 @@
             this.txtBuscar.Size = new System.Drawing.Size(208, 30);
             this.txtBuscar.TabIndex = 85;
             // 
-            // pictureBox2
+            // btnEliminarMa
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(74, 483);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(142, 88);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 88;
-            this.pictureBox2.TabStop = false;
+            this.btnEliminarMa.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarMa.Image")));
+            this.btnEliminarMa.Location = new System.Drawing.Point(74, 483);
+            this.btnEliminarMa.Name = "btnEliminarMa";
+            this.btnEliminarMa.Size = new System.Drawing.Size(142, 88);
+            this.btnEliminarMa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEliminarMa.TabIndex = 88;
+            this.btnEliminarMa.TabStop = false;
+            this.btnEliminarMa.Click += new System.EventHandler(this.btnEliminarMa_Click);
             // 
-            // pictureBox1
+            // btnEditarMa
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(158, 389);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 88);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 87;
-            this.pictureBox1.TabStop = false;
+            this.btnEditarMa.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarMa.Image")));
+            this.btnEditarMa.Location = new System.Drawing.Point(158, 389);
+            this.btnEditarMa.Name = "btnEditarMa";
+            this.btnEditarMa.Size = new System.Drawing.Size(142, 88);
+            this.btnEditarMa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditarMa.TabIndex = 87;
+            this.btnEditarMa.TabStop = false;
+            this.btnEditarMa.Click += new System.EventHandler(this.btnEditarMa_Click);
             // 
             // dataGridView1
             // 
@@ -248,8 +250,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1084, 573);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnEliminarMa);
+            this.Controls.Add(this.btnEditarMa);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnAgregarMa);
@@ -269,8 +271,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminarMa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditarMa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -291,8 +293,8 @@
         private System.Windows.Forms.TextBox txtTipoMaquinaria;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnEliminarMa;
+        private System.Windows.Forms.PictureBox btnEditarMa;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
