@@ -28,5 +28,22 @@ namespace CapaNegocio
                 );
         }
 
+        public void EditarEdificios(decimal dimension, float valor, string tipo, int ID_Edificacion)
+        {
+            objectEdificacion.EditarEdificio(
+                dimension,
+                valor,
+                tipo,
+                ID_Edificacion
+                );
+        }
+
+        public void EliminarEdificios(int ID_Edificacion)
+        {
+            objectEdificacion.EiminarEdificio(
+                ID_Edificacion
+                );
+        }
+
     }
 }

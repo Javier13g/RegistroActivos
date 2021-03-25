@@ -35,6 +35,30 @@ namespace CapaDatos
             comandoEdificacion.Parameters.AddWithValue("@valor", valor);
             comandoEdificacion.Parameters.AddWithValue("@tipo", tipo);
             comandoEdificacion.ExecuteNonQuery();
+            comandoEdificacion.Parameters.Clear();
+        }
+
+        public void EditarEdificio(decimal dimension, float valor, string tipo, int ID_Edificio)
+        {
+            comandoEdificacion.Connection = ConexionEdificacion.ConexionAbierta();
+            comandoEdificacion.CommandText = "EditarEdificios";
+            comandoEdificacion.CommandType = CommandType.StoredProcedure;
+            comandoEdificacion.Parameters.AddWithValue("@tamaño", dimension);
+            comandoEdificacion.Parameters.AddWithValue("@valor", valor);
+            comandoEdificacion.Parameters.AddWithValue("@tipo", tipo);
+            comandoEdificacion.Parameters.AddWithValue("@id", ID_Edificio);
+            comandoEdificacion.ExecuteNonQuery();
+            comandoEdificacion.Parameters.Clear();
+        }
+
+        public void EiminarEdificio(int ID_Edificio)
+        {
+            comandoEdificacion.Connection = ConexionEdificacion.ConexionAbierta();
+            comandoEdificacion.CommandText = "EliminarEdificacion";
+            comandoEdificacion.CommandType = CommandType.StoredProcedure;
+            comandoEdificacion.Parameters.AddWithValue("@id", ID_Edificio);
+            comandoEdificacion.ExecuteNonQuery();
+            comandoEdificacion.Parameters.Clear();
         }
     }
 }
