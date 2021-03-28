@@ -199,5 +199,13 @@ namespace RegistroActivos
         {
             dataGridView2.DataSource = objectovEH.Cantidad();
         }
+
+        private void perfil_Click(object sender, EventArgs e)
+        {
+            AbrirForms(new FormProfile());
+            labelHora.Visible = false;
+            labelFecha.Visible = false;
+            LogoRD.Visible = false;
+        }
     }
 }

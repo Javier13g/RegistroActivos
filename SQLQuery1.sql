@@ -16,10 +16,16 @@ ID_Usuario INT FOREIGN KEY(ID_Usuario) REFERENCES USUARIOS(ID_Usuario)
 CREATE TABLE USUARIOS (
 ID_Usuario INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
 Nombre_Usuario VARCHAR(20) NOT NULL,
-Contraseña VARCHAR(20) NOT NULL,
+Contraseï¿½a VARCHAR(20) NOT NULL,
 Correo VARCHAR(50) NOT NULL,
 Cargo VARCHAR(40) NOT NULL,
 );
+
+CREATE PROC MostrarUsuario
+as
+select * from USUARIOS
+go
+exec MostrarUsuario
 
 
 insert into USUARIOS values ('Javier13g','lospepe15','cuevasjavier52@gmail.com','Administrador')
@@ -30,12 +36,12 @@ insert into USUARIOS values ('Javixo','lospepe15','cuevasjavier53@gmail.com','Em
 select * from USUARIOS
 
 
-select *from USUARIOS where Nombre_Usuario='Javier13g' and Contraseña='lospepe15'
+select *from USUARIOS where Nombre_Usuario='Javier13g' and Contraseï¿½a='lospepe15'
 
 declare @usuario VARCHAR(20) ='Javier13g'
-declare @contraseña VARCHAR(20) ='lospepe15'
+declare @contraseï¿½a VARCHAR(20) ='lospepe15'
 select * from USUARIOS where Nombre_Usuario=@user or Correo=@email
-select *from USUARIOS where Nombre_Usuario=@usuario and Contraseña=@contraseña
+select *from USUARIOS where Nombre_Usuario=@usuario and Contraseï¿½a=@contraseï¿½a
 
 
 CREATE TABLE ACTIVOS (
@@ -51,7 +57,7 @@ SELECT * FROM ACTIVOS
 
 CREATE TABLE TERRENOS (
 ID_Terreno INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
-Tamaño DECIMAL (20,2) NOT NULL,
+Tamaï¿½o DECIMAL (20,2) NOT NULL,
 Matricula_Titulo  VARCHAR(13) NOT NULL,
 Designacion_catastral VARCHAR(13) NOT NULL,
 Valor DECIMAL (38,2) NOT NULL,
@@ -59,17 +65,36 @@ Tipo_Activo VARCHAR(12) NOT NULL
 );
 
 CREATE PROC AgregarTerreno
-@tamaño decimal(20,2),
+@tamaï¿½o decimal(20,2),
 @matricula varchar(13),
 @catastral varchar(13),
 @valor decimal(38,2),
 @tipo varchar(23)
 as
-insert into TERRENOS values (@tamaño,@matricula,@catastral,@valor,@tipo)
+insert into TERRENOS values (@tamaï¿½o,@matricula,@catastral,@valor,@tipo)
 go
 
-exec AgregarTerrenos 157.35,'ab52F45rt','AFk135MVN', 73598.57, 'Tangible'
+CREATE PROC EditarTerreno
+@tamaï¿½o decimal(20,2),
+@matricula varchar(13),
+@catastral varchar(13),
+@valor decimal(38,2),
+@tipo varchar(23),
+@id int
+as
+update TERRENOS set Tamaï¿½o=@tamaï¿½o, Matricula_Titulo=@matricula, 
+Designacion_catastral=@catastral, Valor=@valor, Tipo_Activo=@tipo
+where ID_Terreno=@id
+go
 
+CREATE PROC EliminarTerreno
+
+@id int
+as
+delete from TERRENOS where ID_Terreno=@id
+go
+exec AgregarTerrenos 157.35,'ab52F45rt','AFk135MVN', 73598.57, 'Tangible'
+exec EditarTerreno 157.35,'ab52F45rt','123jajaja', 73598.57, 'Tangible',1
 DROP TABLE TERRENOS
 DROP TABLE ACTIVOS
 
@@ -90,7 +115,7 @@ CREATE TABLE VEHICULOS (
 ID_Vehiculo INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
 Marca  VARCHAR(20) NOT NULL,
 Modelo VARCHAR(13) NOT NULL,
-Año VARCHAR(5) NOT NULL,
+Aï¿½o VARCHAR(5) NOT NULL,
 Tipo  VARCHAR(13) NOT NULL,
 Combustible  VARCHAR(12) NOT NULL,
 Valor float NOT NULL,
@@ -109,6 +134,27 @@ as
 insert into VEHICULOS values (@marca,@modelo,@year,@tipo,@combustible,@valor,@tipoActivo)
 go
 
+CREATE PROC EditarVehiculos
+@marca varchar(20),
+@modelo varchar(13),
+@year varchar(13),
+@tipo varchar(23),
+@combustible varchar(12),
+@valor float,
+@tipoActivo varchar(12),
+@id int
+as
+update VEHICULOS set Marca=@marca, Modelo=@modelo,Aï¿½o=@year, Tipo=@tipo,
+Combustible=@combustible, Valor=@valor, Tipo_Activo=@tipoActivo
+where ID_Vehiculo=@id
+go
+
+CREATE PROC EliminarVehiculo
+
+@id int
+as
+delete from VEHICULOS where ID_Vehiculo=@id
+go
 DROP TABLE VEHICULOS
 DROP TABLE ACTIVOS
 
@@ -123,10 +169,27 @@ select count(*) as Cantidad_Vehiculos from VEHICULOS
 
 CREATE TABLE EDIFICACIONES (
 ID_Edificacion INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
-Tamaño DECIMAL (20,2) NOT NULL,
+Tamaï¿½o DECIMAL (20,2) NOT NULL,
 Valor float NOT NULL,
 Tipo_Activo VARCHAR(12) NOT NULL
 )
+
+CREATE PROC EditarEdificios
+@tamaï¿½o decimal(20,2),
+@valor float,
+@tipo varchar(12),
+@id int
+as
+update EDIFICACIONES set Tamaï¿½o=@tamaï¿½o, Valor=@valor,Tipo_Activo=@tipo
+where ID_Edificacion=@id
+go
+
+CREATE PROC EliminarEdificacion
+
+@id int
+as
+delete from EDIFICACIONES where ID_Edificacion=@id
+go
 DROP TABLE EDIFICACIONES
 DROP TABLE ACTIVOS
 
@@ -139,11 +202,11 @@ go
 exec MostrarEdificacion
 
 CREATE PROC AgregarEdificacion
-@tamaño decimal(20,2),
+@tamaï¿½o decimal(20,2),
 @valor float,
 @tipo varchar(12)
 as
-insert into EDIFICACIONES values (@tamaño,@valor,@tipo)
+insert into EDIFICACIONES values (@tamaï¿½o,@valor,@tipo)
 go
 
 CREATE TABLE MAQUINARIA (
@@ -155,6 +218,22 @@ Tipo_Activo VARCHAR(12) NOT NULL
 DROP TABLE MAQUINARIA
 DROP TABLE ACTIVOS
 
+CREATE PROC EditarMaquinaria
+@tipoM varchar(20),
+@valor float,
+@tipo varchar(12),
+@id int
+as
+update MAQUINARIA set Tipo_Maquinaria=@tipoM, Valor=@valor,Tipo_Activo=@tipo
+where ID_Maquinaria=@id
+go
+
+CREATE PROC EliminarMaquinaria
+
+@id int
+as
+delete from MAQUINARIA where ID_Maquinaria=@id
+go
 insert into MAQUINARIA values ('Trituradora',1580,'Tangible')
 
 CREATE PROC MostrarMaquinaria
@@ -175,7 +254,7 @@ go
 CREATE TABLE PATENTE (
 ID_Patente INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
 Nombre VARCHAR(20) NOT NULL,
-Descripción VARCHAR(100) NOT NULL,
+Descripciï¿½n VARCHAR(100) NOT NULL,
 Valor FLOAT NOT NULL,
 Tipo_Activo VARCHAR(12) NOT NULL
 )

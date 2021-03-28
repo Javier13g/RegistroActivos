@@ -12,5 +12,6 @@ namespace CapaSoporte.Cache
         public static string Correo { get; set; }
         public static string Cargo { get; set; }
         public static string Nombre { get; set; }
+        public static string Password { get; set; }
     }
 }

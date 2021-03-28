@@ -44,6 +44,7 @@
     <Compile Include="CD_Maquinaria.cs" />
     <Compile Include="CD_Patente.cs" />
     <Compile Include="CD_Terrenos.cs" />
+    <Compile Include="CD_Usuario.cs" />
     <Compile Include="CD_Vehiculos.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="ConexionRegistro.cs" />

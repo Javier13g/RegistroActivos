@@ -63,7 +63,7 @@
             this.botonVehiculo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTerrenos = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.perfil = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -78,7 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BotonCerrar)).BeginInit();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.perfil)).BeginInit();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -184,7 +184,7 @@
             this.Menu.Controls.Add(this.botonVehiculo);
             this.Menu.Controls.Add(this.panel1);
             this.Menu.Controls.Add(this.btnTerrenos);
-            this.Menu.Controls.Add(this.pictureBox1);
+            this.Menu.Controls.Add(this.perfil);
             this.Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Menu.Location = new System.Drawing.Point(0, 38);
             this.Menu.Name = "Menu";
@@ -444,15 +444,16 @@
             this.btnTerrenos.UseVisualStyleBackColor = false;
             this.btnTerrenos.Click += new System.EventHandler(this.btnTerrenos_Click);
             // 
-            // pictureBox1
+            // perfil
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(172, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.perfil.Image = ((System.Drawing.Image)(resources.GetObject("perfil.Image")));
+            this.perfil.Location = new System.Drawing.Point(12, 5);
+            this.perfil.Name = "perfil";
+            this.perfil.Size = new System.Drawing.Size(172, 89);
+            this.perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.perfil.TabIndex = 0;
+            this.perfil.TabStop = false;
+            this.perfil.Click += new System.EventHandler(this.perfil_Click);
             // 
             // panelContenedor
             // 
@@ -610,7 +611,7 @@
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.perfil)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -629,7 +630,7 @@
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.PictureBox BotonMinimizar;
         private System.Windows.Forms.PictureBox BotonRestaurar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox perfil;
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Label labelHora;
         private System.Windows.Forms.Label labelFecha;

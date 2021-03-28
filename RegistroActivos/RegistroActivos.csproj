@@ -81,6 +81,12 @@
     <Compile Include="FormPatente.Designer.cs">
       <DependentUpon>FormPatente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfile.Designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRecovery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPatente.resx">
       <DependentUpon>FormPatente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRecovery.resx">
       <DependentUpon>FormRecovery.cs</DependentUpon>

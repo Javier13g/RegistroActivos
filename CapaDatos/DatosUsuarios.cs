@@ -11,6 +11,27 @@ namespace CapaDatos
 {
     public class DatosUsuarios:Conexion
     {
+        public void editarPerfil(int id, string user, string password,
+            string mail )
+        {
+            using (var conexion = GetConexion())
+            {
+                conexion.Open();
+                
+                using (var comando = new SqlCommand())
+                {
+                    comando.Connection = conexion;
+                    comando.CommandText = "update USUARIOS set " +
+                        "Nombre_Usuario=@username, Contraseña=@password, Correo=@mail where ID_Usuario=@id";
+                    comando.Parameters.AddWithValue("@username", user);
+                    comando.Parameters.AddWithValue("@password", password);
+                    comando.Parameters.AddWithValue("@mail", mail);
+                    comando.Parameters.AddWithValue("@id", id);
+                    comando.CommandType = CommandType.Text;
+                    comando.ExecuteNonQuery();
+                }
+            }
+        }
         public bool Login(string Usuario, string Pass)
         {
             using (var conexion = GetConexion())
@@ -32,6 +53,7 @@ namespace CapaDatos
                             CacheUsuario.Nombre = reader.GetString(1);
                             CacheUsuario.Correo = reader.GetString(3);
                             CacheUsuario.Cargo = reader.GetString(4);
+                            CacheUsuario.Password = reader.GetString(2);
                         }
                         return true;
                     }

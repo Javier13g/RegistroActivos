@@ -24,3 +24,4 @@ C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Relea
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Release\RegistroActivos.FormVehiculos.resources
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Release\RegistroActivos.INICIAL.resources
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Release\RegistroActivos.Login.resources
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Release\RegistroActivos.FormProfile.resources
