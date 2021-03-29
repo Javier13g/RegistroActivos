@@ -143,5 +143,45 @@ namespace RegistroActivos
                 MostrarVehiculos();
             }
         }
+
+        private void AlertSoloNumeros()
+        {
+            MessageBox.Show("No es permitido el uso de letras");
+        }
+
+
+        private void txtAño_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                AlertSoloNumeros();
+            }
+        }
+
+        private void txtValorVehiculo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                AlertSoloNumeros();
+            }
+        }
     }
 }

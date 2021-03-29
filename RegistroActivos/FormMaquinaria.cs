@@ -123,5 +123,21 @@ namespace RegistroActivos
             txtTipoMaquinaria.Clear();
             TipoActivoMa.Items.Clear();
         }
+
+        private void txtValorMaquinaria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

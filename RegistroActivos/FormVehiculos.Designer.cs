@@ -184,6 +184,7 @@
             this.txtAño.Name = "txtAño";
             this.txtAño.Size = new System.Drawing.Size(208, 30);
             this.txtAño.TabIndex = 0;
+            this.txtAño.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAño_KeyPress);
             // 
             // label5
             // 
@@ -271,6 +272,7 @@
             this.txtValorVehiculo.Name = "txtValorVehiculo";
             this.txtValorVehiculo.Size = new System.Drawing.Size(208, 30);
             this.txtValorVehiculo.TabIndex = 0;
+            this.txtValorVehiculo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorVehiculo_KeyPress);
             // 
             // label6
             // 

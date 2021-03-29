@@ -141,5 +141,51 @@ namespace RegistroActivos
             else
                 MessageBox.Show("Seleccione el terreno");
         }
+
+        private void AlertSoloNumeros()
+        {
+            MessageBox.Show("No es permitido el uso de letras");
+        }
+
+        private void AlertSoloLetras()
+        {
+            MessageBox.Show("No es permitido el uso de numeros");
+        }
+
+        //EVENTOS PARA VALIDAR LETRAS O NUMEROS
+        private void txtDimension_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+                
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                AlertSoloNumeros();
+            }
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                AlertSoloNumeros();
+            }
+        }
     }
 }

@@ -130,13 +130,14 @@
             this.txtValorEdificio.Name = "txtValorEdificio";
             this.txtValorEdificio.Size = new System.Drawing.Size(208, 30);
             this.txtValorEdificio.TabIndex = 0;
+            this.txtValorEdificio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorEdificio_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(110, 22);
+            this.label1.Location = new System.Drawing.Point(100, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 27);
             this.label1.TabIndex = 66;
@@ -145,7 +146,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.txtDimensionEdi);
-            this.panel1.Location = new System.Drawing.Point(30, 52);
+            this.panel1.Location = new System.Drawing.Point(20, 52);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(235, 60);
             this.panel1.TabIndex = 65;
@@ -159,6 +160,7 @@
             this.txtDimensionEdi.Name = "txtDimensionEdi";
             this.txtDimensionEdi.Size = new System.Drawing.Size(208, 30);
             this.txtDimensionEdi.TabIndex = 0;
+            this.txtDimensionEdi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDimensionEdi_KeyPress);
             // 
             // label5
             // 

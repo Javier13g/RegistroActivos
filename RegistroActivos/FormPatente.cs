@@ -50,5 +50,21 @@ namespace RegistroActivos
                 MessageBox.Show("Error debido a: " + ex);
             }
         }
+
+        private void txtValorPatente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

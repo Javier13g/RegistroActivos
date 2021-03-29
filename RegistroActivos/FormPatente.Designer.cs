@@ -76,7 +76,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(110, 218);
+            this.label3.Location = new System.Drawing.Point(100, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 27);
             this.label3.TabIndex = 74;
@@ -85,7 +85,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.TipoActivoPa);
-            this.panel3.Location = new System.Drawing.Point(40, 248);
+            this.panel3.Location = new System.Drawing.Point(30, 255);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(238, 60);
             this.panel3.TabIndex = 73;
@@ -193,6 +193,7 @@
             this.txtValorPatente.Name = "txtValorPatente";
             this.txtValorPatente.Size = new System.Drawing.Size(208, 30);
             this.txtValorPatente.TabIndex = 0;
+            this.txtValorPatente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorPatente_KeyPress);
             // 
             // txtBuscar
             // 
