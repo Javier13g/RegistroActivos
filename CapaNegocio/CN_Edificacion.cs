@@ -45,5 +45,12 @@ namespace CapaNegocio
                 );
         }
 
+        public DataTable Cantidad()
+        {
+            DataTable TablaEdificacion = new DataTable();
+            TablaEdificacion = objectEdificacion.Cantidad();
+            return TablaEdificacion;
+        }
+
     }
 }

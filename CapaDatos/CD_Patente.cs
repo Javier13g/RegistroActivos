@@ -38,5 +38,15 @@ namespace CapaDatos
             comandoPatentes.Parameters.AddWithValue("@tipo", tipo);
             comandoPatentes.ExecuteNonQuery();
         }
+
+        public DataTable Cantidad()
+        {
+            comandoPatentes.Connection = ConexionPatente.ConexionAbierta();
+            comandoPatentes.CommandText = "select count(*) as Cantidad_Patentes from PATENTE";
+            leerPatente = comandoPatentes.ExecuteReader();
+            tablaPatentes.Load(leerPatente);
+            ConexionPatente.ConexionCerrada();
+            return tablaPatentes;
+        }
     }
 }

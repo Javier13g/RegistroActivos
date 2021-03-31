@@ -17,6 +17,9 @@ namespace RegistroActivos
     {
         CN_Vehiculos objectoTerreno = new CN_Vehiculos();
         CN_Vehiculo objectovEH = new CN_Vehiculo();
+        CN_Edificacion objectoED = new CN_Edificacion();
+        CN_Maquinaria objectoMA = new CN_Maquinaria();
+        CN_Patentes objectoPA = new CN_Patentes();
 
         public FormPrincipal()
         {
@@ -109,6 +112,8 @@ namespace RegistroActivos
             labelHora.Visible = false;
             labelFecha.Visible = false;
             LogoRD.Visible = false;
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
         }
 
         private void botonVehiculo_Click(object sender, EventArgs e)
@@ -117,6 +122,8 @@ namespace RegistroActivos
             labelHora.Visible = false;
             labelFecha.Visible = false;
             LogoRD.Visible = false;
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
         }
 
         private void botonEdificaciones_Click(object sender, EventArgs e)
@@ -125,6 +132,8 @@ namespace RegistroActivos
             labelHora.Visible = false;
             labelFecha.Visible = false;
             LogoRD.Visible = false;
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
         }
 
         private void botonPatente_Click(object sender, EventArgs e)
@@ -133,6 +142,8 @@ namespace RegistroActivos
             labelHora.Visible = false;
             labelFecha.Visible = false;
             LogoRD.Visible = false;
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
         }
 
         private void botonMaquinaria_Click(object sender, EventArgs e)
@@ -141,6 +152,8 @@ namespace RegistroActivos
             labelHora.Visible = false;
             labelFecha.Visible = false;
             LogoRD.Visible = false;
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
         }
 
         private void botonAcerdaDe_Click(object sender, EventArgs e)
@@ -149,6 +162,8 @@ namespace RegistroActivos
             labelHora.Visible = false;
             labelFecha.Visible = false;
             LogoRD.Visible = false;
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
         }
 
         private void botonAyuda_Click(object sender, EventArgs e)
@@ -157,6 +172,8 @@ namespace RegistroActivos
             labelHora.Visible = false;
             labelFecha.Visible = false;
             LogoRD.Visible = false;
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -178,9 +195,8 @@ namespace RegistroActivos
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             CargarDatosUsuario();
-            cantidadTerrenos();
-            cantidadVeh();
-            
+            FuncionesCantidad();
+
             //MANEJAR CARGOS
 
             if (CacheUsuario.Cargo == Cargos.Empleado)
@@ -188,6 +204,15 @@ namespace RegistroActivos
                 botonUsuario.Enabled = false;
             }
             
+        }
+
+        public void FuncionesCantidad()
+        {
+            cantidadTerrenos();
+            cantidadVeh();
+            cantidadEdficacion();
+            cantidadMaquinaria();
+            cantidadPatente();
         }
 
         public void cantidadTerrenos()
@@ -200,12 +225,39 @@ namespace RegistroActivos
             dataGridView2.DataSource = objectovEH.Cantidad();
         }
 
+        public void cantidadEdficacion()
+        {
+            dataGridView3.DataSource = objectoED.Cantidad();
+        }
+
+        public void cantidadMaquinaria()
+        {
+            dataGridView5.DataSource = objectoMA.Cantidad();
+        }
+
+        public void cantidadPatente()
+        {
+            dataGridView4.DataSource = objectoPA.Cantidad();
+        }
+
         private void perfil_Click(object sender, EventArgs e)
         {
             AbrirForms(new FormProfile());
             labelHora.Visible = false;
             labelFecha.Visible = false;
             LogoRD.Visible = false;
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            AbrirForms(new Form2());
+            labelHora.Visible = false;
+            labelFecha.Visible = false;
+            LogoRD.Visible = false;
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
         }
     }
 }

@@ -63,5 +63,15 @@ namespace CapaDatos
             comandoMaquinaria.Parameters.Clear();
 
         }
+
+        public DataTable Cantidad()
+        {
+            comandoMaquinaria.Connection = ConexionMaquinaria.ConexionAbierta();
+            comandoMaquinaria.CommandText = "select count(*) as Cantidad_Maquinaria from MAQUINARIA";
+            leerMaquinaria = comandoMaquinaria.ExecuteReader();
+            tablaMaquinaria.Load(leerMaquinaria);
+            ConexionMaquinaria.ConexionCerrada();
+            return tablaMaquinaria;
+        }
     }
 }

@@ -60,5 +60,15 @@ namespace CapaDatos
             comandoEdificacion.ExecuteNonQuery();
             comandoEdificacion.Parameters.Clear();
         }
+
+        public DataTable Cantidad()
+        {
+            comandoEdificacion.Connection = ConexionEdificacion.ConexionAbierta();
+            comandoEdificacion.CommandText = "select count(*) as Cantidad_Edificaciones from EDIFICACIONES";
+            leerEdificacion = comandoEdificacion.ExecuteReader();
+            tablaEdificacion.Load(leerEdificacion);
+            ConexionEdificacion.ConexionCerrada();
+            return tablaEdificacion;
+        }
     }
 }
