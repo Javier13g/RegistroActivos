@@ -11,15 +11,15 @@ using System.Windows.Forms;
 using CapaSoporte.Cache;
 using CapaNegocio;
 
+
 namespace RegistroActivos
 {
     public partial class FormPrincipal : Form
     {
-        CN_Vehiculos objectoTerreno = new CN_Vehiculos();
-        CN_Vehiculo objectovEH = new CN_Vehiculo();
-        CN_Edificacion objectoED = new CN_Edificacion();
-        CN_Maquinaria objectoMA = new CN_Maquinaria();
-        CN_Patentes objectoPA = new CN_Patentes();
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         public FormPrincipal()
         {
@@ -52,10 +52,7 @@ namespace RegistroActivos
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void fechaHora_Tick(object sender, EventArgs e)
         {
@@ -63,10 +60,7 @@ namespace RegistroActivos
             labelFecha.Text = DateTime.Now.ToLongDateString();
         }
 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        
 
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
@@ -81,7 +75,7 @@ namespace RegistroActivos
         }
 
         //FUNCION QUE ABRE FORMS 
-        private void AbrirForms(object formUs) 
+        public void AbrirForms(object formUs) 
         {
             if (this.panelContenedor.Controls.Count > 0)
                 this.panelContenedor.Controls.RemoveAt(0);
@@ -93,87 +87,61 @@ namespace RegistroActivos
             fh.Show();
         }
 
+        
+
         private void botonUsuario_Click(object sender, EventArgs e)
         {
             //LLAMADA DE LA FUNCION AbrirFormUsuario
-            AbrirForms(new FormUsuario()); 
-            labelHora.Visible = false;
-            labelFecha.Visible = false;
+            AbrirForms(new FormUsuario());
+            Ocultar();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             AbrirForms(new INICIAL());
+
         }
 
         private void btnTerrenos_Click(object sender, EventArgs e)
         {
             AbrirForms(new FormTerrenos());
-            labelHora.Visible = false;
-            labelFecha.Visible = false;
-            LogoRD.Visible = false;
-            dataGridView1.Visible = false;
-            dataGridView2.Visible = false;
+            Ocultar();
         }
 
         private void botonVehiculo_Click(object sender, EventArgs e)
         {
             AbrirForms(new FormVehiculos());
-            labelHora.Visible = false;
-            labelFecha.Visible = false;
-            LogoRD.Visible = false;
-            dataGridView1.Visible = false;
-            dataGridView2.Visible = false;
+            Ocultar();
         }
 
         private void botonEdificaciones_Click(object sender, EventArgs e)
         {
             AbrirForms(new FormEdificacion());
-            labelHora.Visible = false;
-            labelFecha.Visible = false;
-            LogoRD.Visible = false;
-            dataGridView1.Visible = false;
-            dataGridView2.Visible = false;
+            Ocultar();
         }
 
         private void botonPatente_Click(object sender, EventArgs e)
         {
             AbrirForms(new FormPatente());
-            labelHora.Visible = false;
-            labelFecha.Visible = false;
-            LogoRD.Visible = false;
-            dataGridView1.Visible = false;
-            dataGridView2.Visible = false;
+            Ocultar();
         }
 
         private void botonMaquinaria_Click(object sender, EventArgs e)
         {
             AbrirForms(new FormMaquinaria());
-            labelHora.Visible = false;
-            labelFecha.Visible = false;
-            LogoRD.Visible = false;
-            dataGridView1.Visible = false;
-            dataGridView2.Visible = false;
+            Ocultar();
         }
 
         private void botonAcerdaDe_Click(object sender, EventArgs e)
         {
             AbrirForms(new FormAcerdaDe());
-            labelHora.Visible = false;
-            labelFecha.Visible = false;
-            LogoRD.Visible = false;
-            dataGridView1.Visible = false;
-            dataGridView2.Visible = false;
+            Ocultar();
         }
 
         private void botonAyuda_Click(object sender, EventArgs e)
         {
             AbrirForms(new FormAyuda());
-            labelHora.Visible = false;
-            labelFecha.Visible = false;
-            LogoRD.Visible = false;
-            dataGridView1.Visible = false;
-            dataGridView2.Visible = false;
+            Ocultar();
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -196,6 +164,7 @@ namespace RegistroActivos
         {
             CargarDatosUsuario();
             FuncionesCantidad();
+            ValorActivos();
 
             //MANEJAR CARGOS
 
@@ -215,49 +184,107 @@ namespace RegistroActivos
             cantidadPatente();
         }
 
+        public void ValorActivos()
+        {
+            ValorTerreno();
+            ValorVehiculo();
+            ValorEdificios();
+            valorMaquinaria();
+            valorPatente();
+        }
+
         public void cantidadTerrenos()
         {
+            CN_Terrenos objectoTerreno = new CN_Terrenos();
+            
             dataGridView1.DataSource = objectoTerreno.Cantidad();
         }
 
         public void cantidadVeh()
         {
+            CN_Vehiculo objectovEH = new CN_Vehiculo();
             dataGridView2.DataSource = objectovEH.Cantidad();
         }
 
         public void cantidadEdficacion()
         {
+            CN_Edificacion objectoED = new CN_Edificacion();
             dataGridView3.DataSource = objectoED.Cantidad();
         }
 
         public void cantidadMaquinaria()
         {
+            CN_Maquinaria objectoMA = new CN_Maquinaria();
             dataGridView5.DataSource = objectoMA.Cantidad();
         }
 
         public void cantidadPatente()
         {
+            CN_Patentes objectoPA = new CN_Patentes();
             dataGridView4.DataSource = objectoPA.Cantidad();
+        }
+
+        public void ValorTerreno()
+        {
+            CN_Terrenos objectoTerrenos = new CN_Terrenos();
+            dataGridView10.DataSource = objectoTerrenos.Valor();
+        }
+
+        public void ValorVehiculo()
+        {
+            CN_Vehiculo objectoVE = new CN_Vehiculo();
+            dataGridView9.DataSource = objectoVE.Valor();
+        }
+
+        public void ValorEdificios()
+        {
+            CN_Edificacion objectoEDI = new CN_Edificacion();
+            dataGridView8.DataSource = objectoEDI.Valor();
+        }
+
+        public void valorMaquinaria()
+        {
+            CN_Maquinaria objectoMAQ = new CN_Maquinaria();
+            dataGridView6.DataSource = objectoMAQ.Valor();
+        }
+
+        public void valorPatente()
+        {
+            CN_Patentes objectoPAT = new CN_Patentes();
+            dataGridView7.DataSource = objectoPAT.Valor();
         }
 
         private void perfil_Click(object sender, EventArgs e)
         {
             AbrirForms(new FormProfile());
-            labelHora.Visible = false;
-            labelFecha.Visible = false;
-            LogoRD.Visible = false;
-            dataGridView1.Visible = false;
-            dataGridView2.Visible = false;
+            Ocultar();
+
+
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
             AbrirForms(new Form2());
+            Ocultar();
+        }
+
+        private void Ocultar()
+        {
             labelHora.Visible = false;
             labelFecha.Visible = false;
             LogoRD.Visible = false;
             dataGridView1.Visible = false;
             dataGridView2.Visible = false;
+            dataGridView3.Visible = false;
+            dataGridView4.Visible = false;
+            dataGridView5.Visible = false;
+            dataGridView6.Visible = false;
+            dataGridView7.Visible = false;
+            dataGridView8.Visible = false;
+            dataGridView9.Visible = false;
+            dataGridView10.Visible = false;
         }
+
+       
     }
 }

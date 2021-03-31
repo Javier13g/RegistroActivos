@@ -70,5 +70,15 @@ namespace CapaDatos
             ConexionEdificacion.ConexionCerrada();
             return tablaEdificacion;
         }
+
+        public DataTable Valor()
+        {
+            comandoEdificacion.Connection = ConexionEdificacion.ConexionAbierta();
+            comandoEdificacion.CommandText = "SELECT SUM(Valor) AS ValorEdificios FROM EDIFICACIONES";
+            leerEdificacion = comandoEdificacion.ExecuteReader();
+            tablaEdificacion.Load(leerEdificacion);
+            ConexionEdificacion.ConexionCerrada();
+            return tablaEdificacion;
+        }
     }
 }

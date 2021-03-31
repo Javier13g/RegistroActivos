@@ -76,5 +76,15 @@ namespace CapaDatos
             ConexionTerrenos.ConexionCerrada();
             return tablaTerrenos;
         }
+
+        public DataTable Valor()
+        {
+            comandoTerrenos.Connection = ConexionTerrenos.ConexionAbierta();
+            comandoTerrenos.CommandText = "select SUM(Valor) AS Valor_Terrenos FROM TERRENOS;";
+            leerTerrenos = comandoTerrenos.ExecuteReader();
+            tablaTerrenos.Load(leerTerrenos);
+            ConexionTerrenos.ConexionCerrada();
+            return tablaTerrenos;
+        }
     }
 }

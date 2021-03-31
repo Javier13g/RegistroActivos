@@ -73,5 +73,15 @@ namespace CapaDatos
             ConexionMaquinaria.ConexionCerrada();
             return tablaMaquinaria;
         }
+
+        public DataTable Valor()
+        {
+            comandoMaquinaria.Connection = ConexionMaquinaria.ConexionAbierta();
+            comandoMaquinaria.CommandText = "SELECT SUM(Valor) AS ValorEdificios FROM MAQUINARIA";
+            leerMaquinaria = comandoMaquinaria.ExecuteReader();
+            tablaMaquinaria.Load(leerMaquinaria);
+            ConexionMaquinaria.ConexionCerrada();
+            return tablaMaquinaria;
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace RegistroActivos
 {
     public partial class Form2 : Form
     {
-        CN_Vehiculos objectoTerreno = new CN_Vehiculos();
+        CN_Terrenos objectoTerreno = new CN_Terrenos();
         CN_Vehiculo objectovEH = new CN_Vehiculo();
         CN_Edificacion objectoED = new CN_Edificacion();
         CN_Maquinaria objectoMA = new CN_Maquinaria();
@@ -42,6 +42,11 @@ namespace RegistroActivos
             cantidadEdficacion();
             cantidadMaquinaria();
             cantidadPatente();
+        }
+
+        public void ValoresActivos()
+        {
+
         }
 
         public void cantidadTerrenos()

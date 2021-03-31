@@ -4,6 +4,8 @@ C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaNegocio\bin\Release\C
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaNegocio\bin\Release\CapaSoporte.dll
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaNegocio\bin\Release\CapaDatos.pdb
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaNegocio\bin\Release\CapaSoporte.pdb
-C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaNegocio\obj\Release\CapaNegocio.csprojResolveAssemblyReference.cache
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaNegocio\obj\Release\CapaNegocio.dll
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaNegocio\obj\Release\CapaNegocio.pdb
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaNegocio\obj\Release\CapaNegocio.csprojAssemblyReference.cache
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaNegocio\obj\Release\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaNegocio\obj\Release\CapaNegocio.csproj.CopyComplete

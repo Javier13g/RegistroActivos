@@ -25,3 +25,4 @@ C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\bin\Debug
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\bin\Debug\CapaSoporte.pdb
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Debug\RegistroActivos.FormRecovery.resources
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Debug\RegistroActivos.FormProfile.resources
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Debug\RegistroActivos.Form2.resources

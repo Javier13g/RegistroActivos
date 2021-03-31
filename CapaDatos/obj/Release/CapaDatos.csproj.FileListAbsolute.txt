@@ -2,6 +2,8 @@ C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaDatos\bin\Release\Cap
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaDatos\bin\Release\CapaDatos.pdb
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaDatos\bin\Release\CapaSoporte.dll
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaDatos\bin\Release\CapaSoporte.pdb
-C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaDatos\obj\Release\CapaDatos.csprojResolveAssemblyReference.cache
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaDatos\obj\Release\CapaDatos.dll
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaDatos\obj\Release\CapaDatos.pdb
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaDatos\obj\Release\CapaDatos.csprojAssemblyReference.cache
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaDatos\obj\Release\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\CapaDatos\obj\Release\CapaDatos.csproj.CopyComplete

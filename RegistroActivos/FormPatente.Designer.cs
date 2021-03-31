@@ -50,6 +50,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnPDF = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarPa)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -58,14 +59,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarPa
             // 
             this.btnAgregarPa.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarPa.Image")));
-            this.btnAgregarPa.Location = new System.Drawing.Point(901, 24);
+            this.btnAgregarPa.Location = new System.Drawing.Point(841, 95);
             this.btnAgregarPa.Name = "btnAgregarPa";
-            this.btnAgregarPa.Size = new System.Drawing.Size(142, 88);
+            this.btnAgregarPa.Size = new System.Drawing.Size(113, 88);
             this.btnAgregarPa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAgregarPa.TabIndex = 76;
             this.btnAgregarPa.TabStop = false;
@@ -219,9 +221,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(901, 248);
+            this.pictureBox2.Location = new System.Drawing.Point(960, 198);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(142, 88);
+            this.pictureBox2.Size = new System.Drawing.Size(112, 88);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 86;
             this.pictureBox2.TabStop = false;
@@ -229,15 +231,16 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(901, 138);
+            this.pictureBox1.Location = new System.Drawing.Point(960, 95);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 88);
+            this.pictureBox1.Size = new System.Drawing.Size(113, 88);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 85;
             this.pictureBox1.TabStop = false;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
@@ -276,12 +279,24 @@
             this.dataGridView1.Size = new System.Drawing.Size(1024, 155);
             this.dataGridView1.TabIndex = 88;
             // 
+            // btnPDF
+            // 
+            this.btnPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnPDF.Image")));
+            this.btnPDF.Location = new System.Drawing.Point(841, 198);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(113, 88);
+            this.btnPDF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPDF.TabIndex = 104;
+            this.btnPDF.TabStop = false;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            // 
             // FormPatente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1084, 573);
+            this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -311,6 +326,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,5 +352,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox btnPDF;
     }
 }

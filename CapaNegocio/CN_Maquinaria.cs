@@ -53,5 +53,12 @@ namespace CapaNegocio
             TablaMaquinaria = objectMaquinaria.Cantidad();
             return TablaMaquinaria;
         }
+
+        public DataTable Valor()
+        {
+            DataTable TablaMaquinaria = new DataTable();
+            TablaMaquinaria = objectMaquinaria.Valor();
+            return TablaMaquinaria;
+        }
     }
 }

@@ -47,6 +47,7 @@
             this.btnEliminarMa = new System.Windows.Forms.PictureBox();
             this.btnEditarMa = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnPDF = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarMa)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -54,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarMa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditarMa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarMa
@@ -185,7 +187,7 @@
             // btnEliminarMa
             // 
             this.btnEliminarMa.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarMa.Image")));
-            this.btnEliminarMa.Location = new System.Drawing.Point(74, 483);
+            this.btnEliminarMa.Location = new System.Drawing.Point(2, 483);
             this.btnEliminarMa.Name = "btnEliminarMa";
             this.btnEliminarMa.Size = new System.Drawing.Size(142, 88);
             this.btnEliminarMa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -206,6 +208,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -244,12 +247,24 @@
             this.dataGridView1.Size = new System.Drawing.Size(722, 393);
             this.dataGridView1.TabIndex = 89;
             // 
+            // btnPDF
+            // 
+            this.btnPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnPDF.Image")));
+            this.btnPDF.Location = new System.Drawing.Point(158, 483);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(142, 88);
+            this.btnPDF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPDF.TabIndex = 104;
+            this.btnPDF.TabStop = false;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            // 
             // FormMaquinaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1084, 573);
+            this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEliminarMa);
             this.Controls.Add(this.btnEditarMa);
@@ -275,6 +290,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarMa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditarMa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,5 +313,6 @@
         private System.Windows.Forms.PictureBox btnEliminarMa;
         private System.Windows.Forms.PictureBox btnEditarMa;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox btnPDF;
     }
 }

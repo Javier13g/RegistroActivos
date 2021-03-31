@@ -36,5 +36,12 @@ namespace CapaNegocio
             TablaPatente = objectPatentes.Cantidad();
             return TablaPatente;
         }
+
+        public DataTable Valor()
+        {
+            DataTable TablaPatente = new DataTable();
+            TablaPatente = objectPatentes.Valor();
+            return TablaPatente;
+        }
     }
 }

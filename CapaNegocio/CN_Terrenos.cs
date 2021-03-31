@@ -9,7 +9,7 @@ using CapaDatos;
 
 namespace CapaNegocio
 {
-    public class CN_Vehiculos
+    public class CN_Terrenos
     {
         private CD_Terrenos objectTerrenos = new CD_Terrenos();
         public DataTable MostrarTerrenos()
@@ -57,5 +57,13 @@ namespace CapaNegocio
             TablaTerrenos = objectTerrenos.Cantidad();
             return TablaTerrenos;
         }
+
+        public DataTable Valor()
+        {
+            DataTable TablaTerrenos = new DataTable();
+            TablaTerrenos = objectTerrenos.Valor();
+            return TablaTerrenos;
+        }
+
     }
 }

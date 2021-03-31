@@ -62,5 +62,12 @@ namespace CapaNegocio
             TablaVehiculos = objectVehiculos.Cantidad();
             return TablaVehiculos;
         }
+
+        public DataTable Valor()
+        {
+            DataTable TablaVehiculos = new DataTable();
+            TablaVehiculos = objectVehiculos.Valor();
+            return TablaVehiculos;
+        }
     }
 }

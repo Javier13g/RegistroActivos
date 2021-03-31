@@ -82,5 +82,15 @@ namespace CapaDatos
             return tablaVehiculos;
         }
 
+        public DataTable Valor()
+        {
+            comandoVehiculos.Connection = ConexionVehiculos.ConexionAbierta();
+            comandoVehiculos.CommandText = "SELECT SUM(Valor) AS ValorVehiculos FROM VEHICULOS";
+            leerVehiculos = comandoVehiculos.ExecuteReader();
+            tablaVehiculos.Load(leerVehiculos);
+            ConexionVehiculos.ConexionCerrada();
+            return tablaVehiculos;
+        }
+
     }
 }

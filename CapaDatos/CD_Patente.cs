@@ -48,5 +48,15 @@ namespace CapaDatos
             ConexionPatente.ConexionCerrada();
             return tablaPatentes;
         }
+
+        public DataTable Valor()
+        {
+            comandoPatentes.Connection = ConexionPatente.ConexionAbierta();
+            comandoPatentes.CommandText = "SELECT SUM(Valor) AS ValorPatentes FROM PATENTE";
+            leerPatente = comandoPatentes.ExecuteReader();
+            tablaPatentes.Load(leerPatente);
+            ConexionPatente.ConexionCerrada();
+            return tablaPatentes;
+        }
     }
 }
