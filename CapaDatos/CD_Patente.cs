@@ -37,6 +37,32 @@ namespace CapaDatos
             comandoPatentes.Parameters.AddWithValue("@valor", valor);
             comandoPatentes.Parameters.AddWithValue("@tipo", tipo);
             comandoPatentes.ExecuteNonQuery();
+            comandoPatentes.Parameters.Clear();
+        }
+
+        public void EditarPatentes(string nombre, string descripcion,
+            float valor, string tipo, int id)
+        {
+            comandoPatentes.Connection = ConexionPatente.ConexionAbierta();
+            comandoPatentes.CommandText = "EditarPatentes";
+            comandoPatentes.CommandType = CommandType.StoredProcedure;
+            comandoPatentes.Parameters.AddWithValue("@nombre", nombre);
+            comandoPatentes.Parameters.AddWithValue("@descripcion", descripcion);
+            comandoPatentes.Parameters.AddWithValue("@valor", valor);
+            comandoPatentes.Parameters.AddWithValue("@tipo", tipo);
+            comandoPatentes.Parameters.AddWithValue("@id", id);
+            comandoPatentes.ExecuteNonQuery();
+            comandoPatentes.Parameters.Clear();
+        }
+
+        public void EliminarPatentes( int id)
+        {
+            comandoPatentes.Connection = ConexionPatente.ConexionAbierta();
+            comandoPatentes.CommandText = "EliminarPatente";
+            comandoPatentes.CommandType = CommandType.StoredProcedure;
+            comandoPatentes.Parameters.AddWithValue("@id", id);
+            comandoPatentes.ExecuteNonQuery();
+            comandoPatentes.Parameters.Clear();
         }
 
         public DataTable Cantidad()

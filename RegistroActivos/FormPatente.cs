@@ -17,6 +17,8 @@ namespace RegistroActivos
     public partial class FormPatente : Form
     {
         CN_Patentes objectoPa = new CN_Patentes();
+        private string id_patente = null;
+        private bool editar = false;
 
         public FormPatente()
         {
@@ -37,20 +39,44 @@ namespace RegistroActivos
 
         private void btnAgregarPa_Click(object sender, EventArgs e)
         {
-            try
+            if (editar == false)
             {
-                objectoPa.AgregarPatentes(
-                    txtNombrePatente.Text,
-                    txtDescripcionPatente.Text,
-                    Convert.ToInt32(txtValorPatente.Text),
-                    TipoActivoPa.Text
-                    );
-                MessageBox.Show("Se guardo bien jasjdajs");
-                MostrarPatentes();
+                try
+                {
+                    objectoPa.AgregarPatentes(
+                        txtNombrePatente.Text,
+                        txtDescripcionPatente.Text,
+                        Convert.ToInt32(txtValorPatente.Text),
+                        TipoActivoPa.Text
+                        );
+                    MessageBox.Show("Se guardo bien jasjdajs");
+                    MostrarPatentes();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error debido a: " + ex);
+                }
             }
-            catch (Exception ex)
+            if (editar == true)
             {
-                MessageBox.Show("Error debido a: " + ex);
+                try
+                {
+                    objectoPa.EditarPatentes(
+                        txtNombrePatente.Text,
+                        txtDescripcionPatente.Text,
+                        Convert.ToInt32(txtValorPatente.Text),
+                        TipoActivoPa.Text,
+                        Convert.ToInt32(id_patente.ToString())
+                        );
+                    MessageBox.Show("Se edito la patente correspondiente al ID "
+                        + id_patente);
+                    MostrarPatentes();
+                    editar = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error debido a: " + ex);
+                }
             }
         }
 
@@ -123,6 +149,47 @@ namespace RegistroActivos
         private void btnPDF_Click(object sender, EventArgs e)
         {
             exportPDF(dataGridView1, "Pantentes");
+        }
+
+        private void btnEditarPa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    editar = true;
+                    txtNombrePatente.Text = dataGridView1.CurrentRow.Cells["Nombre"]
+                        .Value.ToString();
+                    txtDescripcionPatente.Text = dataGridView1.CurrentRow.Cells["Descripción"]
+                        .Value.ToString();
+                    TipoActivoPa.Text = dataGridView1.CurrentRow.Cells["Tipo_Activo"]
+                        .Value.ToString();
+                    txtValorPatente.Text = dataGridView1.CurrentRow.Cells["Valor"]
+                        .Value.ToString();
+                    id_patente = dataGridView1.CurrentRow.Cells["ID_Patente"]
+                        .Value.ToString();
+                }
+                else
+                    MessageBox.Show("Seleccione la maquina");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error debido a: " + ex);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                id_patente = dataGridView1.CurrentRow.Cells["ID_Patente"]
+                        .Value.ToString();
+                objectoPa.EliminarPatentes(Convert.ToInt32(id_patente.ToString()));
+                MessageBox.Show("patente eliminado");
+                MostrarPatentes();
+            }
+            else
+                MessageBox.Show("Seleccione la patente");
         }
     }
 }

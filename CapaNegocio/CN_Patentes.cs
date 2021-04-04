@@ -29,6 +29,24 @@ namespace CapaNegocio
                 tipo
                 );
         }
+        public void EditarPatentes(string nombre, string descripcion,
+            float valor, string tipo, int id)
+        {
+            objectPatentes.EditarPatentes(
+                nombre,
+                descripcion,
+                valor,
+                tipo,
+                id
+                );
+        }
+
+        public void EliminarPatentes(int id)
+        {
+            objectPatentes.EliminarPatentes(
+                id
+                );
+        }
 
         public DataTable Cantidad()
         {
