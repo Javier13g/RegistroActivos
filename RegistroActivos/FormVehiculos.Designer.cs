@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVehiculos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVehiculos));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPDF = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnEliminarVeh = new System.Windows.Forms.PictureBox();
             this.btnEditarVe = new System.Windows.Forms.PictureBox();
@@ -60,8 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtMarca = new System.Windows.Forms.TextBox();
-            this.btnPDF = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarVeh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditarVe)).BeginInit();
@@ -73,37 +72,17 @@
             this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // btnPDF
             // 
-            this.panel1.Controls.Add(this.btnPDF);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.btnEliminarVeh);
-            this.panel1.Controls.Add(this.btnEditarVe);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.btnGuardarVehiculo);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1084, 573);
-            this.panel1.TabIndex = 0;
+            this.btnPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnPDF.Image")));
+            this.btnPDF.Location = new System.Drawing.Point(767, 224);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(142, 88);
+            this.btnPDF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPDF.TabIndex = 129;
+            this.btnPDF.TabStop = false;
             // 
             // dataGridView1
             // 
@@ -144,7 +123,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(1024, 155);
-            this.dataGridView1.TabIndex = 107;
+            this.dataGridView1.TabIndex = 128;
             // 
             // btnEliminarVeh
             // 
@@ -153,8 +132,9 @@
             this.btnEliminarVeh.Name = "btnEliminarVeh";
             this.btnEliminarVeh.Size = new System.Drawing.Size(142, 88);
             this.btnEliminarVeh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEliminarVeh.TabIndex = 106;
+            this.btnEliminarVeh.TabIndex = 127;
             this.btnEliminarVeh.TabStop = false;
+            this.btnEliminarVeh.Click += new System.EventHandler(this.btnEliminarVeh_Click_1);
             // 
             // btnEditarVe
             // 
@@ -163,8 +143,9 @@
             this.btnEditarVe.Name = "btnEditarVe";
             this.btnEditarVe.Size = new System.Drawing.Size(142, 88);
             this.btnEditarVe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEditarVe.TabIndex = 105;
+            this.btnEditarVe.TabIndex = 126;
             this.btnEditarVe.TabStop = false;
+            this.btnEditarVe.Click += new System.EventHandler(this.btnEditarVe_Click_1);
             // 
             // label7
             // 
@@ -174,7 +155,7 @@
             this.label7.Location = new System.Drawing.Point(496, 320);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 27);
-            this.label7.TabIndex = 104;
+            this.label7.TabIndex = 125;
             this.label7.Text = "Buscar:";
             // 
             // txtBuscar
@@ -185,7 +166,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(435, 350);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(208, 30);
-            this.txtBuscar.TabIndex = 103;
+            this.txtBuscar.TabIndex = 124;
             // 
             // label6
             // 
@@ -195,7 +176,7 @@
             this.label6.Location = new System.Drawing.Point(747, 128);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 27);
-            this.label6.TabIndex = 102;
+            this.label6.TabIndex = 123;
             this.label6.Text = "Tipo Activo";
             // 
             // panel6
@@ -204,7 +185,7 @@
             this.panel6.Location = new System.Drawing.Point(685, 158);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(238, 60);
-            this.panel6.TabIndex = 101;
+            this.panel6.TabIndex = 122;
             // 
             // TipoActivoVeh
             // 
@@ -230,7 +211,7 @@
             this.label4.Location = new System.Drawing.Point(517, 125);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 27);
-            this.label4.TabIndex = 100;
+            this.label4.TabIndex = 121;
             this.label4.Text = "Valor";
             // 
             // panel4
@@ -239,7 +220,7 @@
             this.panel4.Location = new System.Drawing.Point(423, 155);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(238, 60);
-            this.panel4.TabIndex = 99;
+            this.panel4.TabIndex = 120;
             // 
             // txtValorVehiculo
             // 
@@ -258,8 +239,9 @@
             this.btnGuardarVehiculo.Name = "btnGuardarVehiculo";
             this.btnGuardarVehiculo.Size = new System.Drawing.Size(142, 88);
             this.btnGuardarVehiculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnGuardarVehiculo.TabIndex = 98;
+            this.btnGuardarVehiculo.TabIndex = 119;
             this.btnGuardarVehiculo.TabStop = false;
+            this.btnGuardarVehiculo.Click += new System.EventHandler(this.btnGuardarVehiculo_Click_1);
             // 
             // label3
             // 
@@ -269,7 +251,7 @@
             this.label3.Location = new System.Drawing.Point(225, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 27);
-            this.label3.TabIndex = 97;
+            this.label3.TabIndex = 118;
             this.label3.Text = "Combustible";
             // 
             // panel3
@@ -278,7 +260,7 @@
             this.panel3.Location = new System.Drawing.Point(159, 157);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(238, 60);
-            this.panel3.TabIndex = 96;
+            this.panel3.TabIndex = 117;
             // 
             // comboBoxComb
             // 
@@ -307,7 +289,7 @@
             this.label2.Location = new System.Drawing.Point(905, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 27);
-            this.label2.TabIndex = 95;
+            this.label2.TabIndex = 116;
             this.label2.Text = "Tipo";
             // 
             // panel2
@@ -316,7 +298,7 @@
             this.panel2.Location = new System.Drawing.Point(816, 50);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(238, 60);
-            this.panel2.TabIndex = 94;
+            this.panel2.TabIndex = 115;
             // 
             // comboBoxTipo
             // 
@@ -342,7 +324,7 @@
             this.label9.Location = new System.Drawing.Point(655, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 27);
-            this.label9.TabIndex = 93;
+            this.label9.TabIndex = 114;
             this.label9.Text = "Año";
             // 
             // panel9
@@ -351,7 +333,7 @@
             this.panel9.Location = new System.Drawing.Point(559, 50);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(238, 60);
-            this.panel9.TabIndex = 92;
+            this.panel9.TabIndex = 113;
             // 
             // txtAño
             // 
@@ -371,7 +353,7 @@
             this.label5.Location = new System.Drawing.Point(371, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 27);
-            this.label5.TabIndex = 91;
+            this.label5.TabIndex = 112;
             this.label5.Text = "Modelo";
             // 
             // panel5
@@ -380,7 +362,7 @@
             this.panel5.Location = new System.Drawing.Point(299, 50);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(238, 60);
-            this.panel5.TabIndex = 90;
+            this.panel5.TabIndex = 111;
             // 
             // txtModelo
             // 
@@ -400,7 +382,7 @@
             this.label1.Location = new System.Drawing.Point(110, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 27);
-            this.label1.TabIndex = 89;
+            this.label1.TabIndex = 110;
             this.label1.Text = "Marca";
             // 
             // panel7
@@ -409,7 +391,7 @@
             this.panel7.Location = new System.Drawing.Point(30, 50);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(235, 60);
-            this.panel7.TabIndex = 88;
+            this.panel7.TabIndex = 109;
             // 
             // txtMarca
             // 
@@ -421,31 +403,39 @@
             this.txtMarca.Size = new System.Drawing.Size(208, 30);
             this.txtMarca.TabIndex = 0;
             // 
-            // btnPDF
-            // 
-            this.btnPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnPDF.Image")));
-            this.btnPDF.Location = new System.Drawing.Point(767, 224);
-            this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(142, 88);
-            this.btnPDF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnPDF.TabIndex = 108;
-            this.btnPDF.TabStop = false;
-            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
-            // 
             // FormVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1084, 573);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnPDF);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnEliminarVeh);
+            this.Controls.Add(this.btnEditarVe);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.btnGuardarVehiculo);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormVehiculos";
             this.Text = "FormVehiculos";
             this.Load += new System.EventHandler(this.FormVehiculos_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarVeh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditarVe)).EndInit();
@@ -461,14 +451,14 @@
             this.panel5.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox btnPDF;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox btnEliminarVeh;
         private System.Windows.Forms.PictureBox btnEditarVe;
@@ -496,6 +486,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.PictureBox btnPDF;
     }
 }

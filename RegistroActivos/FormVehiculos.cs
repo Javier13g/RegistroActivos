@@ -28,6 +28,7 @@ namespace RegistroActivos
         private void FormVehiculos_Load(object sender, EventArgs e)
         {
             MostrarVehiculos();
+            this.Hide();
         }
 
         private void MostrarVehiculos()
@@ -37,91 +38,9 @@ namespace RegistroActivos
 
         }
 
-        private void btnGuardarVehiculo_Click(object sender, EventArgs e)
-        {
-            //SI EDITAR ES FALSO, GUARDA DE MANERA NORMAL
-            if (editar == false)
-            {
-                try
-                {
-                    objectoVehiculo.AgregarVehiculos(
-                        txtMarca.Text,
-                        txtModelo.Text,
-                        txtAño.Text,
-                        comboBoxTipo.Text,
-                        comboBoxComb.Text,
-                        Convert.ToInt32(txtValorVehiculo.Text),
-                        TipoActivoVeh.Text
-                        );
-                    MessageBox.Show("Se guardo bien jasjdajs");
-                    MostrarVehiculos();
-                    limpiar();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error debido a: " + ex);
-                }
-            }
-
-            //SI EDITAR ES VERDADERO, EDITA EL TERRENO CORRESPONDIENTE
-            if (editar == true)
-            {
-                try
-                {
-                    objectoVehiculo.EditarVehiculos(
-                        txtMarca.Text,
-                        txtModelo.Text,
-                        txtAño.Text,
-                        comboBoxTipo.Text,
-                        comboBoxComb.Text,
-                        Convert.ToInt32(txtValorVehiculo.Text),
-                        TipoActivoVeh.Text,
-                        Convert.ToInt32(id_vehiculo.ToString())
-                        );
-                    MessageBox.Show("Se edito el vehiculo correspondiente al ID " + id_vehiculo);
-                    MostrarVehiculos();
-                    limpiar();
-                    editar = false;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error debido a: " + ex);
-                }
-            }
-        }
 
         //FUNCION QUE SELECCIONA LOS DATOS PARA EDITARLOS
-        private void btnEditarVe_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if(dataGridView1.SelectedRows.Count > 0)
-                {
-                    editar = true;
-                    txtMarca.Text = dataGridView1.CurrentRow.Cells["Marca"]
-                        .Value.ToString();
-                    txtModelo.Text = dataGridView1.CurrentRow.Cells["Modelo"]
-                        .Value.ToString();
-                    txtAño.Text = dataGridView1.CurrentRow.Cells["Año"]
-                        .Value.ToString();
-                    comboBoxTipo.Text = dataGridView1.CurrentRow.Cells["Tipo"]
-                        .Value.ToString();
-                    comboBoxComb.Text = dataGridView1.CurrentRow.Cells["Combustible"]
-                        .Value.ToString();
-                    txtValorVehiculo.Text = dataGridView1.CurrentRow.Cells["Valor"]
-                        .Value.ToString();
-                    id_vehiculo = dataGridView1.CurrentRow.Cells["ID_Vehiculo"]
-                        .Value.ToString();
-
-                }
-                else
-                    MessageBox.Show("Seleccione el vehiculo");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error debido a:  " + ex);
-            }
-        }
+       
 
         //METODO QUE LIMPIA LOS FORM
         private void limpiar()
@@ -134,18 +53,7 @@ namespace RegistroActivos
             txtValorVehiculo.Clear();
         }
 
-        //FUNCION QUE ELIMINA
-        private void btnEliminarVeh_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                id_vehiculo = dataGridView1.CurrentRow.Cells["ID_Vehiculo"]
-                        .Value.ToString();
-                objectoVehiculo.EliminarVehiculos(Convert.ToInt32(id_vehiculo.ToString()));
-                MessageBox.Show("Vehiculo "+txtModelo+ " Eliminado");
-                MostrarVehiculos();
-            }
-        }
+        
 
         private void AlertSoloNumeros()
         {
@@ -241,5 +149,104 @@ namespace RegistroActivos
         {
             exportPDF(dataGridView1, "Vehiculos");
         }
+
+        private void btnGuardarVehiculo_Click_1(object sender, EventArgs e)
+        {
+            //SI EDITAR ES FALSO, GUARDA DE MANERA NORMAL
+            if (editar == false)
+            {
+                try
+                {
+                    objectoVehiculo.AgregarVehiculos(
+                        txtMarca.Text,
+                        txtModelo.Text,
+                        txtAño.Text,
+                        comboBoxTipo.Text,
+                        comboBoxComb.Text,
+                        Convert.ToInt32(txtValorVehiculo.Text),
+                        TipoActivoVeh.Text
+                        );
+                    MessageBox.Show("Se guardo bien jasjdajs");
+                    MostrarVehiculos();
+                    limpiar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error debido a: " + ex);
+                }
+            }
+
+            //SI EDITAR ES VERDADERO, EDITA EL TERRENO CORRESPONDIENTE
+            if (editar == true)
+            {
+                try
+                {
+                    objectoVehiculo.EditarVehiculos(
+                        txtMarca.Text,
+                        txtModelo.Text,
+                        txtAño.Text,
+                        comboBoxTipo.Text,
+                        comboBoxComb.Text,
+                        Convert.ToInt32(txtValorVehiculo.Text),
+                        TipoActivoVeh.Text,
+                        Convert.ToInt32(id_vehiculo.ToString())
+                        );
+                    MessageBox.Show("Se edito el vehiculo correspondiente al ID " + id_vehiculo);
+                    MostrarVehiculos();
+                    limpiar();
+                    editar = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error debido a: " + ex);
+                }
+            }
+        }
+
+        private void btnEditarVe_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    editar = true;
+                    txtMarca.Text = dataGridView1.CurrentRow.Cells["Marca"]
+                        .Value.ToString();
+                    txtModelo.Text = dataGridView1.CurrentRow.Cells["Modelo"]
+                        .Value.ToString();
+                    txtAño.Text = dataGridView1.CurrentRow.Cells["Año"]
+                        .Value.ToString();
+                    comboBoxTipo.Text = dataGridView1.CurrentRow.Cells["Tipo"]
+                        .Value.ToString();
+                    comboBoxComb.Text = dataGridView1.CurrentRow.Cells["Combustible"]
+                        .Value.ToString();
+                    txtValorVehiculo.Text = dataGridView1.CurrentRow.Cells["Valor"]
+                        .Value.ToString();
+                    id_vehiculo = dataGridView1.CurrentRow.Cells["ID_Vehiculo"]
+                        .Value.ToString();
+
+                }
+                else
+                    MessageBox.Show("Seleccione el vehiculo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error debido a:  " + ex);
+            }
+        }
+
+        private void btnEliminarVeh_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                id_vehiculo = dataGridView1.CurrentRow.Cells["ID_Vehiculo"]
+                        .Value.ToString();
+                objectoVehiculo.EliminarVehiculos(Convert.ToInt32(id_vehiculo.ToString()));
+                MessageBox.Show("Vehiculo " + txtModelo + " Eliminado");
+                MostrarVehiculos();
+            }
+        }
+
+       
     }
 }

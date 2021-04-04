@@ -31,3 +31,7 @@ C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Relea
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\bin\Release\BouncyCastle.Crypto.dll
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\bin\Release\itextsharp.dll
 C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\bin\Release\itextsharp.xml
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\obj\Release\RegistroActivos.FormBienvenida.resources
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\bin\Release\CircularProgressBar.dll
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\bin\Release\WinFormAnimation.dll
+C:\Users\AbdielCuevas\Documents\GitHub\RegistroActivos\RegistroActivos\bin\Release\CircularProgressBar.xml

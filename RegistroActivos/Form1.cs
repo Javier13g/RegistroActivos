@@ -75,16 +75,26 @@ namespace RegistroActivos
         }
 
         //FUNCION QUE ABRE FORMS 
-        public void AbrirForms(object formUs) 
+        private void AbrirForms<T>() where T : Form, new()
         {
-            if (this.panelContenedor.Controls.Count > 0)
-                this.panelContenedor.Controls.RemoveAt(0);
-            Form fh = formUs as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.panelContenedor.Controls.Add(fh);
-            this.panelContenedor.Tag = fh;
-            fh.Show();
+            Form formulario = panelContenedor.Controls.OfType<T>().FirstOrDefault();
+            if (formulario != null)
+            {
+                //Si la instancia esta minimizada la dejamos en su estado normal
+                if (formulario.WindowState == FormWindowState.Minimized)
+                {
+                    formulario.WindowState = FormWindowState.Normal;
+                }
+                //Si la instancia existe la pongo en primer plano
+                formulario.BringToFront();
+                return;
+            }
+            //Se abre el form
+            formulario = new T();
+            formulario.TopLevel = false;
+            panelContenedor.Controls.Add(formulario);
+            panelContenedor.Tag = formulario;
+            formulario.Show();
         }
 
         
@@ -92,55 +102,56 @@ namespace RegistroActivos
         private void botonUsuario_Click(object sender, EventArgs e)
         {
             //LLAMADA DE LA FUNCION AbrirFormUsuario
-            AbrirForms(new FormUsuario());
+            AbrirForms<FormUsuario>();
             Ocultar();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirForms(new INICIAL());
+           // AbrirForms(new INICIAL());
 
         }
 
         private void btnTerrenos_Click(object sender, EventArgs e)
         {
-            AbrirForms(new FormTerrenos());
+            AbrirForms<FormTerrenos>();
             Ocultar();
+            
         }
 
         private void botonVehiculo_Click(object sender, EventArgs e)
         {
-            AbrirForms(new FormVehiculos());
+            AbrirForms<FormVehiculos>();
             Ocultar();
         }
 
         private void botonEdificaciones_Click(object sender, EventArgs e)
         {
-            AbrirForms(new FormEdificacion());
+            AbrirForms<FormEdificacion>();
             Ocultar();
         }
 
         private void botonPatente_Click(object sender, EventArgs e)
         {
-            AbrirForms(new FormPatente());
+            AbrirForms<FormPatente>();
             Ocultar();
         }
 
         private void botonMaquinaria_Click(object sender, EventArgs e)
         {
-            AbrirForms(new FormMaquinaria());
+            AbrirForms<FormMaquinaria>();
             Ocultar();
         }
 
         private void botonAcerdaDe_Click(object sender, EventArgs e)
         {
-            AbrirForms(new FormAcerdaDe());
+            AbrirForms<FormAcerdaDe>();
             Ocultar();
         }
 
         private void botonAyuda_Click(object sender, EventArgs e)
         {
-            AbrirForms(new FormAyuda());
+            AbrirForms<FormAyuda>();
             Ocultar();
         }
 
@@ -256,7 +267,7 @@ namespace RegistroActivos
 
         private void perfil_Click(object sender, EventArgs e)
         {
-            AbrirForms(new FormProfile());
+           AbrirForms<FormProfile>();
             Ocultar();
 
 
@@ -264,7 +275,7 @@ namespace RegistroActivos
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            AbrirForms(new Form2());
+            AbrirForms<Form2>();
             Ocultar();
         }
 

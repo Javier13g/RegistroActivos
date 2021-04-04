@@ -99,10 +99,12 @@ namespace RegistroActivos
                         //SI LOS DATOS DE LOS CAMPOS SON VERDADEROS,INICIARA EL PROGRAMA
                         if (validarLogin == true)
                         {
+                            this.Hide();
+                            FormBienvenida fm = new FormBienvenida();
+                            fm.ShowDialog();
                             FormPrincipal mainmenu = new FormPrincipal();
                             mainmenu.Show();
                             mainmenu.FormClosed += CerrarSesion;
-                            this.Hide();
                         }
                         //SI ES FALSO, MARCARA ERROR
                         else
