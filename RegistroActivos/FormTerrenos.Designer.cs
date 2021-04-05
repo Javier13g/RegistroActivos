@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTerrenos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTerrenos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPDF = new System.Windows.Forms.PictureBox();
             this.btnEliminarTe = new System.Windows.Forms.PictureBox();
             this.btnEditarTer = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,8 +55,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtDimension = new System.Windows.Forms.TextBox();
-            this.btnPDF = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarTe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditarTer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardarTerrenos)).BeginInit();
@@ -65,7 +66,6 @@
             this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,6 +93,17 @@
             this.panel1.Size = new System.Drawing.Size(1084, 573);
             this.panel1.TabIndex = 0;
             // 
+            // btnPDF
+            // 
+            this.btnPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnPDF.Image")));
+            this.btnPDF.Location = new System.Drawing.Point(736, 229);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(142, 88);
+            this.btnPDF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPDF.TabIndex = 103;
+            this.btnPDF.TabStop = false;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            // 
             // btnEliminarTe
             // 
             this.btnEliminarTe.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarTe.Image")));
@@ -102,6 +113,7 @@
             this.btnEliminarTe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEliminarTe.TabIndex = 102;
             this.btnEliminarTe.TabStop = false;
+            this.btnEliminarTe.Click += new System.EventHandler(this.btnEliminarTe_Click_1);
             // 
             // btnEditarTer
             // 
@@ -112,17 +124,18 @@
             this.btnEditarTer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEditarTer.TabIndex = 101;
             this.btnEditarTer.TabStop = false;
+            this.btnEditarTer.Click += new System.EventHandler(this.btnEditarTer_Click_1);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(505, 325);
+            this.label4.Location = new System.Drawing.Point(455, 325);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 27);
+            this.label4.Size = new System.Drawing.Size(190, 27);
             this.label4.TabIndex = 100;
-            this.label4.Text = "Buscar:";
+            this.label4.Text = "Buscar (Matricula):";
             // 
             // txtBuscar
             // 
@@ -133,6 +146,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(208, 30);
             this.txtBuscar.TabIndex = 99;
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             // 
             // btnGuardarTerrenos
             // 
@@ -143,6 +157,7 @@
             this.btnGuardarTerrenos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnGuardarTerrenos.TabIndex = 98;
             this.btnGuardarTerrenos.TabStop = false;
+            this.btnGuardarTerrenos.Click += new System.EventHandler(this.btnGuardarTerrenos_Click_1);
             // 
             // dataGridView1
             // 
@@ -336,17 +351,6 @@
             this.txtDimension.Size = new System.Drawing.Size(208, 30);
             this.txtDimension.TabIndex = 0;
             // 
-            // btnPDF
-            // 
-            this.btnPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnPDF.Image")));
-            this.btnPDF.Location = new System.Drawing.Point(736, 229);
-            this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(142, 88);
-            this.btnPDF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnPDF.TabIndex = 103;
-            this.btnPDF.TabStop = false;
-            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
-            // 
             // FormTerrenos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,6 +364,7 @@
             this.Load += new System.EventHandler(this.FormTerrenos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarTe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditarTer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardarTerrenos)).EndInit();
@@ -373,7 +378,6 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).EndInit();
             this.ResumeLayout(false);
 
         }

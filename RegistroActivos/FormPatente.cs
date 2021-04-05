@@ -11,6 +11,7 @@ using CapaNegocio;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace RegistroActivos
 {
@@ -190,6 +191,25 @@ namespace RegistroActivos
             }
             else
                 MessageBox.Show("Seleccione la patente");
+        }
+
+        SqlConnection con = new SqlConnection("Server=DESKTOP-ABURFAM; DataBase= RegistroActivos; integrated security= true");
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM PATENTE where Nombre like ('" + txtBuscar.Text + "%')";
+            cmd.ExecuteNonQuery();
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            con.Close();
         }
     }
 }

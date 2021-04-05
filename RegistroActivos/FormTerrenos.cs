@@ -11,6 +11,8 @@ using CapaNegocio;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using System.Data.SqlClient;
+
 namespace RegistroActivos
 {
     public partial class FormTerrenos : Form
@@ -18,6 +20,7 @@ namespace RegistroActivos
         CN_Terrenos objectoTerreno = new CN_Terrenos();
         private string id_Terreno = null;
         private bool editar = false;
+        
 
         public FormTerrenos()
         {
@@ -39,85 +42,9 @@ namespace RegistroActivos
 
         }
 
-        //BTN GUARDAR TERRENOS
-        private void btnGuardarTerrenos_Click(object sender, EventArgs e)
-        {
-            //SI EDITAR ES FALSO, GUARDA DE MANERA NORMAL
-            if (editar == false)
-            {
-                try
-                {
-                    objectoTerreno.AgregarTerrenos(
-                        Convert.ToDecimal(txtDimension.Text),
-                        txtMatricula.Text,
-                        txtDesignacion.Text,
-                        Convert.ToDecimal(txtValor.Text),
-                        comboBoxTipo.Text
-                        );
-                    MessageBox.Show("Se guardo bien jasjdajs");
-                    MostrarTerrenos();
-                    limpiar();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error debido a: " + ex);
-                }
-            } 
+       
 
-            //SI EDITAR ES VERDADERO, EDITA EL TERRENO CORRESPONDIENTE
-            if(editar == true)
-            {
-                try
-                {
-                    objectoTerreno.EditarTerrenos(
-                        Convert.ToDecimal(txtDimension.Text),
-                        txtMatricula.Text,
-                        txtDesignacion.Text,
-                        Convert.ToDecimal(txtValor.Text),
-                        comboBoxTipo.Text,
-                        Convert.ToInt32(id_Terreno.ToString())
-                        );
-                    MessageBox.Show("Se edito el terreno correspondiente al ID " + id_Terreno);
-                    MostrarTerrenos();
-                    limpiar();
-                    editar = false;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error debido a: " + ex);
-                }
-            }
-        }
-
-        //FUNCION QUE SELECCIONA LOS DATOS PARA EDITARLOS
-        private void btnEditarTer_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dataGridView1.SelectedRows.Count > 0)
-                {
-                    editar = true;
-                    txtDimension.Text = dataGridView1.CurrentRow.Cells["Tamaño"]
-                        .Value.ToString();
-                    txtMatricula.Text = dataGridView1.CurrentRow.Cells["Matricula_Titulo"]
-                        .Value.ToString();
-                    txtDesignacion.Text = dataGridView1.CurrentRow.Cells["Designacion_Catastral"]
-                        .Value.ToString();
-                    txtValor.Text = dataGridView1.CurrentRow.Cells["Valor"]
-                        .Value.ToString();
-                    comboBoxTipo.Text = dataGridView1.CurrentRow.Cells["Tipo_Activo"]
-                        .Value.ToString();
-                    id_Terreno = dataGridView1.CurrentRow.Cells["ID_Terreno"]
-                        .Value.ToString();
-                }
-                else
-                    MessageBox.Show("Seleccione el Terreno");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error debido a:  " + ex);
-            }
-        }
+     
 
         //METODO QUE LIMPIA LOS FORM
         private void limpiar()
@@ -129,20 +56,6 @@ namespace RegistroActivos
             txtValor.Clear();
         }
 
-        //FUNCION QUE ELIMINA TERRENOS
-        private void btnEliminarTe_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                id_Terreno = dataGridView1.CurrentRow.Cells["ID_Terreno"]
-                        .Value.ToString();
-                objectoTerreno.EliminarTerrenos(Convert.ToInt32(id_Terreno.ToString()));
-                MessageBox.Show("Terreno Eliminado");
-                MostrarTerrenos();
-            }
-            else
-                MessageBox.Show("Seleccione el terreno");
-        }
 
         private void AlertSoloNumeros()
         {
@@ -243,6 +156,134 @@ namespace RegistroActivos
         private void btnPDF_Click(object sender, EventArgs e)
         {
             exportPDF(dataGridView1, "terrenos");
+        }
+
+       
+
+        
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+           /* try
+            {
+                Matricula = int.Parse(txtBuscar.Text);
+                dataGridView1.DataSource = obj.Buscar(Matricula);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error debido a:  " + ex);
+            }*/
+        }
+
+        private void btnGuardarTerrenos_Click_1(object sender, EventArgs e)
+        {
+            //SI EDITAR ES FALSO, GUARDA DE MANERA NORMAL
+            if (editar == false)
+            {
+                try
+                {
+                    objectoTerreno.AgregarTerrenos(
+                        Convert.ToDecimal(txtDimension.Text),
+                        txtMatricula.Text,
+                        txtDesignacion.Text,
+                        Convert.ToDecimal(txtValor.Text),
+                        comboBoxTipo.Text
+                        );
+                    MessageBox.Show("Se guardo bien jasjdajs");
+                    MostrarTerrenos();
+                    limpiar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error debido a: " + ex);
+                }
+            }
+
+            //SI EDITAR ES VERDADERO, EDITA EL TERRENO CORRESPONDIENTE
+            if (editar == true)
+            {
+                try
+                {
+                    objectoTerreno.EditarTerrenos(
+                        Convert.ToDecimal(txtDimension.Text),
+                        txtMatricula.Text,
+                        txtDesignacion.Text,
+                        Convert.ToDecimal(txtValor.Text),
+                        comboBoxTipo.Text,
+                        Convert.ToInt32(id_Terreno.ToString())
+                        );
+                    MessageBox.Show("Se edito el terreno correspondiente al ID " + id_Terreno);
+                    MostrarTerrenos();
+                    limpiar();
+                    editar = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error debido a: " + ex);
+                }
+            }
+        }
+
+        private void btnEditarTer_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    editar = true;
+                    txtDimension.Text = dataGridView1.CurrentRow.Cells["Tamaño"]
+                        .Value.ToString();
+                    txtMatricula.Text = dataGridView1.CurrentRow.Cells["Matricula_Titulo"]
+                        .Value.ToString();
+                    txtDesignacion.Text = dataGridView1.CurrentRow.Cells["Designacion_Catastral"]
+                        .Value.ToString();
+                    txtValor.Text = dataGridView1.CurrentRow.Cells["Valor"]
+                        .Value.ToString();
+                    comboBoxTipo.Text = dataGridView1.CurrentRow.Cells["Tipo_Activo"]
+                        .Value.ToString();
+                    id_Terreno = dataGridView1.CurrentRow.Cells["ID_Terreno"]
+                        .Value.ToString();
+                }
+                else
+                    MessageBox.Show("Seleccione el Terreno");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error debido a:  " + ex);
+            }
+        }
+
+        private void btnEliminarTe_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                id_Terreno = dataGridView1.CurrentRow.Cells["ID_Terreno"]
+                        .Value.ToString();
+                objectoTerreno.EliminarTerrenos(Convert.ToInt32(id_Terreno.ToString()));
+                MessageBox.Show("Terreno Eliminado");
+                MostrarTerrenos();
+            }
+            else
+                MessageBox.Show("Seleccione el terreno");
+        }
+
+        SqlConnection con = new SqlConnection("Server=DESKTOP-ABURFAM; DataBase= RegistroActivos; integrated security= true");
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM TERRENOS where Matricula_Titulo like ('" + txtBuscar.Text + "%')";
+            cmd.ExecuteNonQuery();
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            con.Close();
         }
     }
 }
