@@ -20,6 +20,34 @@ namespace CapaNegocio
             TablaUsuario = objectUsu.MostrarUsuarios();
             return TablaUsuario;
         }
+
+        public void AgregarUsuarios(string nombre, string password,
+            string correo, string cargo)
+        {
+            objectUsu.AgregarUsuarios(
+                nombre,
+                password,
+                correo,
+                cargo
+                );
+        }
+
+        public void EditarUsuarios(string nombre, string password,
+            string correo, string cargo, int id)
+        {
+            objectUsu.EditarUsuarios(
+                nombre,
+                password,
+                correo,
+                cargo,
+                id
+                );
+        }
+
+        public void EliminarUsuarios(int id)
+        {
+            objectUsu.EliminarUsuarios(id);
+        }
     }
 }
 

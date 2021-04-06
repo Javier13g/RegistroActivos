@@ -25,5 +25,44 @@ namespace CapaDatos
             ConexionUsuario.ConexionCerrada();
             return tablaUsuario;
         }
+
+        public void AgregarUsuarios(string nombre, string password,
+            string correo, string cargo)
+        {
+            comandoUsuario.Connection = ConexionUsuario.ConexionAbierta();
+            comandoUsuario.CommandText = "AgregaUsuarios";
+            comandoUsuario.CommandType = CommandType.StoredProcedure;
+            comandoUsuario.Parameters.AddWithValue("@nombre", nombre);
+            comandoUsuario.Parameters.AddWithValue("@password", password);
+            comandoUsuario.Parameters.AddWithValue("@correo", correo);
+            comandoUsuario.Parameters.AddWithValue("@cargo", cargo);
+            comandoUsuario.ExecuteNonQuery();
+            comandoUsuario.Parameters.Clear();
+        }
+
+        public void EditarUsuarios(string nombre, string password,
+            string correo, string cargo, int id)
+        {
+            comandoUsuario.Connection = ConexionUsuario.ConexionAbierta();
+            comandoUsuario.CommandText = "EditarUsuarios";
+            comandoUsuario.CommandType = CommandType.StoredProcedure;
+            comandoUsuario.Parameters.AddWithValue("@nombre", nombre);
+            comandoUsuario.Parameters.AddWithValue("@password", password);
+            comandoUsuario.Parameters.AddWithValue("@correo", correo);
+            comandoUsuario.Parameters.AddWithValue("@cargo", cargo);
+            comandoUsuario.Parameters.AddWithValue("@id", id);
+            comandoUsuario.ExecuteNonQuery();
+            comandoUsuario.Parameters.Clear();
+        }
+
+        public void EliminarUsuarios(int id)
+        {
+            comandoUsuario.Connection = ConexionUsuario.ConexionAbierta();
+            comandoUsuario.CommandText = "EliminarUsuarios";
+            comandoUsuario.CommandType = CommandType.StoredProcedure;
+            comandoUsuario.Parameters.AddWithValue("@id", id);
+            comandoUsuario.ExecuteNonQuery();
+            comandoUsuario.Parameters.Clear();
+        }
     }
 }

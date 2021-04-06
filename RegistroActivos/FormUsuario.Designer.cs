@@ -32,10 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.txtConfirmar = new System.Windows.Forms.TextBox();
-            this.btnGuardarEmpleados = new System.Windows.Forms.PictureBox();
+            this.btnGuardarUsuarios = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtContraseña = new System.Windows.Forms.TextBox();
@@ -48,60 +45,31 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEliminarUsu = new System.Windows.Forms.PictureBox();
+            this.btnEditarUsu = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGuardarEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardarUsuarios)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminarUsu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditarUsu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label9
+            // btnGuardarUsuarios
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(562, 35);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(213, 27);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "Confirmar Contraseña";
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.txtConfirmar);
-            this.panel9.Location = new System.Drawing.Point(552, 65);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(238, 60);
-            this.panel9.TabIndex = 46;
-            // 
-            // txtConfirmar
-            // 
-            this.txtConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtConfirmar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmar.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.txtConfirmar.Location = new System.Drawing.Point(13, 15);
-            this.txtConfirmar.Name = "txtConfirmar";
-            this.txtConfirmar.Size = new System.Drawing.Size(208, 30);
-            this.txtConfirmar.TabIndex = 0;
-            // 
-            // btnGuardarEmpleados
-            // 
-            this.btnGuardarEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarEmpleados.Image")));
-            this.btnGuardarEmpleados.Location = new System.Drawing.Point(909, 271);
-            this.btnGuardarEmpleados.Name = "btnGuardarEmpleados";
-            this.btnGuardarEmpleados.Size = new System.Drawing.Size(142, 88);
-            this.btnGuardarEmpleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnGuardarEmpleados.TabIndex = 43;
-            this.btnGuardarEmpleados.TabStop = false;
+            this.btnGuardarUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarUsuarios.Image")));
+            this.btnGuardarUsuarios.Location = new System.Drawing.Point(909, 271);
+            this.btnGuardarUsuarios.Name = "btnGuardarUsuarios";
+            this.btnGuardarUsuarios.Size = new System.Drawing.Size(142, 88);
+            this.btnGuardarUsuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnGuardarUsuarios.TabIndex = 43;
+            this.btnGuardarUsuarios.TabStop = false;
+            this.btnGuardarUsuarios.Click += new System.EventHandler(this.btnGuardarUsuarios_Click);
             // 
             // label5
             // 
@@ -195,7 +163,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(517, 142);
+            this.label3.Location = new System.Drawing.Point(635, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 27);
             this.label3.TabIndex = 52;
@@ -204,7 +172,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.txtCorreo);
-            this.panel3.Location = new System.Drawing.Point(428, 172);
+            this.panel3.Location = new System.Drawing.Point(546, 65);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(238, 60);
             this.panel3.TabIndex = 51;
@@ -219,32 +187,34 @@
             this.txtCorreo.Size = new System.Drawing.Size(208, 30);
             this.txtCorreo.TabIndex = 0;
             // 
-            // pictureBox2
+            // btnEliminarUsu
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(909, 494);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(142, 88);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 86;
-            this.pictureBox2.TabStop = false;
+            this.btnEliminarUsu.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarUsu.Image")));
+            this.btnEliminarUsu.Location = new System.Drawing.Point(909, 494);
+            this.btnEliminarUsu.Name = "btnEliminarUsu";
+            this.btnEliminarUsu.Size = new System.Drawing.Size(142, 88);
+            this.btnEliminarUsu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEliminarUsu.TabIndex = 86;
+            this.btnEliminarUsu.TabStop = false;
+            this.btnEliminarUsu.Click += new System.EventHandler(this.btnEliminarUsu_Click);
             // 
-            // pictureBox1
+            // btnEditarUsu
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(909, 384);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 88);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 85;
-            this.pictureBox1.TabStop = false;
+            this.btnEditarUsu.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarUsu.Image")));
+            this.btnEditarUsu.Location = new System.Drawing.Point(909, 384);
+            this.btnEditarUsu.Name = "btnEditarUsu";
+            this.btnEditarUsu.Size = new System.Drawing.Size(142, 88);
+            this.btnEditarUsu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditarUsu.TabIndex = 85;
+            this.btnEditarUsu.TabStop = false;
+            this.btnEditarUsu.Click += new System.EventHandler(this.btnEditarUsu_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(149, 205);
+            this.label4.Location = new System.Drawing.Point(407, 216);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 27);
             this.label4.TabIndex = 88;
@@ -255,10 +225,11 @@
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.txtBuscar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.txtBuscar.Location = new System.Drawing.Point(88, 235);
+            this.txtBuscar.Location = new System.Drawing.Point(346, 246);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(208, 30);
             this.txtBuscar.TabIndex = 87;
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             // 
             // dataGridView1
             // 
@@ -309,15 +280,13 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnEliminarUsu);
+            this.Controls.Add(this.btnEditarUsu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.panel9);
-            this.Controls.Add(this.btnGuardarEmpleados);
+            this.Controls.Add(this.btnGuardarUsuarios);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label1);
@@ -326,9 +295,7 @@
             this.Name = "FormUsuario";
             this.Text = "FormUsuario";
             this.Load += new System.EventHandler(this.FormUsuario_Load);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGuardarEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardarUsuarios)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -337,8 +304,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminarUsu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditarUsu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -346,11 +313,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txtConfirmar;
-        private System.Windows.Forms.PictureBox btnGuardarEmpleados;
+        private System.Windows.Forms.PictureBox btnGuardarUsuarios;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtContraseña;
@@ -363,8 +326,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnEliminarUsu;
+        private System.Windows.Forms.PictureBox btnEditarUsu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridView dataGridView1;
