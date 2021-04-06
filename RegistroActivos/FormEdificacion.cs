@@ -43,20 +43,29 @@ namespace RegistroActivos
             //SI EDITAR ES FALSO, GUARDA DE MANERA NORMAL
             if (editar == false)
             {
-                try
+                if (txtDimensionEdi.Text == "" || txtValorEdificio.Text == ""
+                    || TipoActivoEd.Text == "")
                 {
-                    objectoED.AgregarEdificios(
-                        Convert.ToDecimal(txtDimensionEdi.Text),
-                        Convert.ToInt32(txtValorEdificio.Text),
-                        TipoActivoEd.Text
-                        );
-                    MessageBox.Show("Se guardo bien jasjdajs");
-                    MostrarEdificios();
-                    limpiar();
+                    MessageBox.Show("Algun campo esta vacio, revise", "Error!!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error debido a: " + ex);
+                    try
+                    {
+                        objectoED.AgregarEdificios(
+                            Convert.ToDecimal(txtDimensionEdi.Text),
+                            Convert.ToInt32(txtValorEdificio.Text),
+                            TipoActivoEd.Text
+                            );
+                        MessageBox.Show("Edificacion Guardada");
+                        MostrarEdificios();
+                        limpiar();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error debido a: " + ex);
+                    }
                 }
             }
 

@@ -180,22 +180,31 @@ namespace RegistroActivos
             //SI EDITAR ES FALSO, GUARDA DE MANERA NORMAL
             if (editar == false)
             {
-                try
+                if (txtDimension.Text == "" || txtMatricula.Text == "" || txtDesignacion.Text == ""
+                    || txtValor.Text == "" || comboBoxTipo.Text == "")
                 {
-                    objectoTerreno.AgregarTerrenos(
-                        Convert.ToDecimal(txtDimension.Text),
-                        txtMatricula.Text,
-                        txtDesignacion.Text,
-                        Convert.ToDecimal(txtValor.Text),
-                        comboBoxTipo.Text
-                        );
-                    MessageBox.Show("Se guardo bien jasjdajs");
-                    MostrarTerrenos();
-                    limpiar();
+                    MessageBox.Show("Algun campo esta vacio, revise", "Error!!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error debido a: " + ex);
+                    try
+                    {
+                        objectoTerreno.AgregarTerrenos(
+                            Convert.ToDecimal(txtDimension.Text),
+                            txtMatricula.Text,
+                            txtDesignacion.Text,
+                            Convert.ToDecimal(txtValor.Text),
+                            comboBoxTipo.Text
+                            );
+                        MessageBox.Show("Terreno guardado");
+                        MostrarTerrenos();
+                        limpiar();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error debido a: " + ex);
+                    }
                 }
             }
 

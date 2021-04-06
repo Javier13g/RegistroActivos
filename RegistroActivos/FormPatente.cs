@@ -42,20 +42,29 @@ namespace RegistroActivos
         {
             if (editar == false)
             {
-                try
+                if (txtNombrePatente.Text == "" || txtDescripcionPatente.Text == ""
+                    || txtValorPatente.Text == "" || TipoActivoPa.Text == "")
                 {
-                    objectoPa.AgregarPatentes(
-                        txtNombrePatente.Text,
-                        txtDescripcionPatente.Text,
-                        Convert.ToInt32(txtValorPatente.Text),
-                        TipoActivoPa.Text
-                        );
-                    MessageBox.Show("Se guardo bien jasjdajs");
-                    MostrarPatentes();
+                    MessageBox.Show("Algun campo esta vacio, revise", "Error!!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error debido a: " + ex);
+                    try
+                    {
+                        objectoPa.AgregarPatentes(
+                            txtNombrePatente.Text,
+                            txtDescripcionPatente.Text,
+                            Convert.ToInt32(txtValorPatente.Text),
+                            TipoActivoPa.Text
+                            );
+                        MessageBox.Show("Patente guardada");
+                        MostrarPatentes();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error debido a: " + ex);
+                    }
                 }
             }
             if (editar == true)

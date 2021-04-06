@@ -156,24 +156,34 @@ namespace RegistroActivos
             //SI EDITAR ES FALSO, GUARDA DE MANERA NORMAL
             if (editar == false)
             {
-                try
+                if (txtMarca.Text == "" || txtModelo.Text == "" || txtAño.Text == ""
+                    || comboBoxTipo.Text == "" || comboBoxComb.Text == ""
+                    || txtValorVehiculo.Text == "" || TipoActivoVeh.Text == "")
                 {
-                    objectoVehiculo.AgregarVehiculos(
-                        txtMarca.Text,
-                        txtModelo.Text,
-                        txtAño.Text,
-                        comboBoxTipo.Text,
-                        comboBoxComb.Text,
-                        Convert.ToInt32(txtValorVehiculo.Text),
-                        TipoActivoVeh.Text
-                        );
-                    MessageBox.Show("Se guardo bien jasjdajs");
-                    MostrarVehiculos();
-                    limpiar();
+                    MessageBox.Show("Algun campo esta vacio, revise", "Error!!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error debido a: " + ex);
+                    try
+                    {
+                        objectoVehiculo.AgregarVehiculos(
+                            txtMarca.Text,
+                            txtModelo.Text,
+                            txtAño.Text,
+                            comboBoxTipo.Text,
+                            comboBoxComb.Text,
+                            Convert.ToInt32(txtValorVehiculo.Text),
+                            TipoActivoVeh.Text
+                            );
+                        MessageBox.Show("Vehiculo guardado");
+                        MostrarVehiculos();
+                        limpiar();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error debido a: " + ex);
+                    }
                 }
             }
 

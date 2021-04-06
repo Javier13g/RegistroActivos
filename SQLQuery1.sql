@@ -36,7 +36,7 @@ insert into USUARIOS values ('Javixo','lospepe15','cuevasjavier53@gmail.com','Em
 select * from USUARIOS
 
 
-select *from USUARIOS where Nombre_Usuario='Javier13g' and Contrase�a='lospepe15'
+select *from USUARIOS where Nombre_Usuario='Javier13g' and Contraseña='lospepe15'
 
 declare @usuario VARCHAR(20) ='Javier13g'
 declare @contrase�a VARCHAR(20) ='lospepe15'
@@ -63,6 +63,9 @@ Designacion_catastral VARCHAR(13) NOT NULL,
 Valor DECIMAL (38,2) NOT NULL,
 Tipo_Activo VARCHAR(12) NOT NULL
 );
+
+SELECT SUM(Valor) AS ValorTerrenos FROM TERRENOS;
+
 
 CREATE PROC AgregarTerreno
 @tama�o decimal(20,2),
@@ -103,6 +106,8 @@ select * from TERRENOS
 
 select count(*) as Cantidad_Terrenos
   from TERRENOS
+
+
 
 CREATE PROC MostrarTerrenos
 as
@@ -254,7 +259,7 @@ go
 CREATE TABLE PATENTE (
 ID_Patente INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
 Nombre VARCHAR(20) NOT NULL,
-Descripci�n VARCHAR(100) NOT NULL,
+Descripcion VARCHAR(100) NOT NULL,
 Valor FLOAT NOT NULL,
 Tipo_Activo VARCHAR(12) NOT NULL
 )
@@ -277,4 +282,22 @@ CREATE PROC AgregaPantentes
 @tipo varchar(12)
 as
 insert into PATENTE values (@nombre,@descripcion,@valor,@tipo)
+go
+
+CREATE PROC EditarPatentes
+@nombre varchar(20),
+@descripcion varchar(100),
+@valor float,
+@tipo varchar(12),
+@id int
+as
+update PATENTE set  Nombre=@nombre, Descripción=@descripcion, Valor=@valor,Tipo_Activo=@tipo
+where ID_Patente=@id
+go
+
+CREATE PROC EliminarPatente
+
+@id int
+as
+delete from PATENTE where ID_Patente=@id
 go

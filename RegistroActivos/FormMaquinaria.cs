@@ -43,20 +43,29 @@ namespace RegistroActivos
             //SI EDITAR ES FALSO, GUARDA DE MANERA NORMAL
             if (editar == false)
             {
-                try
+                if (txtTipoMaquinaria.Text == "" || txtValorMaquinaria.Text == ""
+                    || TipoActivoMa.Text == "")
                 {
-                    objectoMaqui.AgregarMaquinaria(
-                        txtTipoMaquinaria.Text,
-                        Convert.ToInt32(txtValorMaquinaria.Text),
-                        TipoActivoMa.Text
-                        );
-                    MessageBox.Show("Se guardo bien jasjdajs");
-                    MostrarMaquinaria();
-                    limpiar();
+                    MessageBox.Show("Algun campo esta vacio, revise", "Error!!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error debido a: " + ex);
+                    try
+                    {
+                        objectoMaqui.AgregarMaquinaria(
+                            txtTipoMaquinaria.Text,
+                            Convert.ToInt32(txtValorMaquinaria.Text),
+                            TipoActivoMa.Text
+                            );
+                        MessageBox.Show("Maquinaria guardada");
+                        MostrarMaquinaria();
+                        limpiar();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error debido a: " + ex);
+                    }
                 }
             }
             if (editar == true)
