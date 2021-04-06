@@ -21,6 +21,33 @@ Correo VARCHAR(50) NOT NULL,
 Cargo VARCHAR(40) NOT NULL,
 );
 
+CREATE PROC AgregaUsuarios
+@nombre varchar(20),
+@password varchar(20),
+@correo varchar(50),
+@cargo varchar(40)
+as
+insert into USUARIOS values (@nombre,@password,@correo,@cargo)
+go
+
+CREATE PROC EditarPatentes
+@nombre varchar(20),
+@descripcion varchar(100),
+@valor float,
+@tipo varchar(12),
+@id int
+as
+update PATENTE set  Nombre=@nombre, Descripción=@descripcion, Valor=@valor,Tipo_Activo=@tipo
+where ID_Patente=@id
+go
+
+CREATE PROC EliminarPatente
+
+@id int
+as
+delete from PATENTE where ID_Patente=@id
+go
+
 CREATE PROC MostrarUsuario
 as
 select * from USUARIOS
@@ -39,7 +66,7 @@ select * from USUARIOS
 select *from USUARIOS where Nombre_Usuario='Javier13g' and Contraseña='lospepe15'
 
 declare @usuario VARCHAR(20) ='Javier13g'
-declare @contrase�a VARCHAR(20) ='lospepe15'
+declare @contraseña VARCHAR(20) ='lospepe15'
 select * from USUARIOS where Nombre_Usuario=@user or Correo=@email
 select *from USUARIOS where Nombre_Usuario=@usuario and Contrase�a=@contrase�a
 
