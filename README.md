@@ -1,6 +1,8 @@
 # RegistroActivos
 
-![ejemplo](https://user-images.githubusercontent.com/61069624/111056654-21431e00-8457-11eb-8add-925b5ced69ba.gif)
+![Principal](https://user-images.githubusercontent.com/61069624/113671041-d7c7a680-9683-11eb-9998-8317900ecf02.PNG)
 
-![ejemplo_edit_0](https://user-images.githubusercontent.com/61069624/111056727-c1994280-8457-11eb-9ed4-dc09c1e2691d.gif)
+![listo](https://user-images.githubusercontent.com/61069624/113671826-df3b7f80-9684-11eb-8c53-ee13f00aaf3f.gif)
+
+
 
