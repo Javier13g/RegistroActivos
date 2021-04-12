@@ -60,6 +60,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtMarca = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.txtColor = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txtTipo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarVeh)).BeginInit();
@@ -72,12 +82,15 @@
             this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPDF
             // 
             this.btnPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnPDF.Image")));
-            this.btnPDF.Location = new System.Drawing.Point(767, 224);
+            this.btnPDF.Location = new System.Drawing.Point(908, 271);
             this.btnPDF.Name = "btnPDF";
             this.btnPDF.Size = new System.Drawing.Size(142, 88);
             this.btnPDF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -105,7 +118,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 397);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 445);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -122,13 +135,13 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(1024, 155);
+            this.dataGridView1.Size = new System.Drawing.Size(1376, 155);
             this.dataGridView1.TabIndex = 128;
             // 
             // btnEliminarVeh
             // 
             this.btnEliminarVeh.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarVeh.Image")));
-            this.btnEliminarVeh.Location = new System.Drawing.Point(581, 224);
+            this.btnEliminarVeh.Location = new System.Drawing.Point(722, 271);
             this.btnEliminarVeh.Name = "btnEliminarVeh";
             this.btnEliminarVeh.Size = new System.Drawing.Size(142, 88);
             this.btnEliminarVeh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -139,7 +152,7 @@
             // btnEditarVe
             // 
             this.btnEditarVe.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarVe.Image")));
-            this.btnEditarVe.Location = new System.Drawing.Point(380, 224);
+            this.btnEditarVe.Location = new System.Drawing.Point(521, 271);
             this.btnEditarVe.Name = "btnEditarVe";
             this.btnEditarVe.Size = new System.Drawing.Size(142, 88);
             this.btnEditarVe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -152,7 +165,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(496, 320);
+            this.label7.Location = new System.Drawing.Point(676, 376);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 27);
             this.label7.TabIndex = 125;
@@ -163,7 +176,7 @@
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.txtBuscar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.txtBuscar.Location = new System.Drawing.Point(435, 350);
+            this.txtBuscar.Location = new System.Drawing.Point(615, 406);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(208, 30);
             this.txtBuscar.TabIndex = 124;
@@ -174,7 +187,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(747, 128);
+            this.label6.Location = new System.Drawing.Point(1217, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 27);
             this.label6.TabIndex = 123;
@@ -183,7 +196,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.TipoActivoVeh);
-            this.panel6.Location = new System.Drawing.Point(685, 158);
+            this.panel6.Location = new System.Drawing.Point(1155, 188);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(238, 60);
             this.panel6.TabIndex = 122;
@@ -209,7 +222,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(517, 125);
+            this.label4.Location = new System.Drawing.Point(963, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 27);
             this.label4.TabIndex = 121;
@@ -218,7 +231,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.txtValorVehiculo);
-            this.panel4.Location = new System.Drawing.Point(423, 155);
+            this.panel4.Location = new System.Drawing.Point(869, 188);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(238, 60);
             this.panel4.TabIndex = 120;
@@ -236,7 +249,7 @@
             // btnGuardarVehiculo
             // 
             this.btnGuardarVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarVehiculo.Image")));
-            this.btnGuardarVehiculo.Location = new System.Drawing.Point(173, 224);
+            this.btnGuardarVehiculo.Location = new System.Drawing.Point(314, 271);
             this.btnGuardarVehiculo.Name = "btnGuardarVehiculo";
             this.btnGuardarVehiculo.Size = new System.Drawing.Size(142, 88);
             this.btnGuardarVehiculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -249,7 +262,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(225, 127);
+            this.label3.Location = new System.Drawing.Point(650, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 27);
             this.label3.TabIndex = 118;
@@ -258,7 +271,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.comboBoxComb);
-            this.panel3.Location = new System.Drawing.Point(159, 157);
+            this.panel3.Location = new System.Drawing.Point(584, 188);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(238, 60);
             this.panel3.TabIndex = 117;
@@ -287,16 +300,16 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(905, 20);
+            this.label2.Location = new System.Drawing.Point(1217, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 27);
+            this.label2.Size = new System.Drawing.Size(118, 27);
             this.label2.TabIndex = 116;
-            this.label2.Text = "Tipo";
+            this.label2.Text = "Transmision";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.comboBoxTipo);
-            this.panel2.Location = new System.Drawing.Point(816, 50);
+            this.panel2.Location = new System.Drawing.Point(1155, 82);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(238, 60);
             this.panel2.TabIndex = 115;
@@ -322,7 +335,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(655, 20);
+            this.label9.Location = new System.Drawing.Point(676, 52);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 27);
             this.label9.TabIndex = 114;
@@ -331,7 +344,7 @@
             // panel9
             // 
             this.panel9.Controls.Add(this.txtAño);
-            this.panel9.Location = new System.Drawing.Point(559, 50);
+            this.panel9.Location = new System.Drawing.Point(580, 82);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(238, 60);
             this.panel9.TabIndex = 113;
@@ -351,7 +364,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(371, 20);
+            this.label5.Location = new System.Drawing.Point(360, 52);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 27);
             this.label5.TabIndex = 112;
@@ -360,7 +373,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.txtModelo);
-            this.panel5.Location = new System.Drawing.Point(299, 50);
+            this.panel5.Location = new System.Drawing.Point(288, 82);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(238, 60);
             this.panel5.TabIndex = 111;
@@ -380,7 +393,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(110, 20);
+            this.label1.Location = new System.Drawing.Point(83, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 27);
             this.label1.TabIndex = 110;
@@ -389,7 +402,7 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.txtMarca);
-            this.panel7.Location = new System.Drawing.Point(30, 50);
+            this.panel7.Location = new System.Drawing.Point(3, 82);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(235, 60);
             this.panel7.TabIndex = 109;
@@ -404,12 +417,117 @@
             this.txtMarca.Size = new System.Drawing.Size(208, 30);
             this.txtMarca.TabIndex = 0;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(934, 52);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 27);
+            this.label8.TabIndex = 131;
+            this.label8.Text = "Matricula";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtMatricula);
+            this.panel1.Location = new System.Drawing.Point(869, 82);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(238, 60);
+            this.panel1.TabIndex = 130;
+            // 
+            // txtMatricula
+            // 
+            this.txtMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtMatricula.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatricula.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.txtMatricula.Location = new System.Drawing.Point(13, 15);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(208, 30);
+            this.txtMatricula.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label10.Location = new System.Drawing.Point(589, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(181, 38);
+            this.label10.TabIndex = 132;
+            this.label10.Text = "VEHICULOS";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Location = new System.Drawing.Point(375, 158);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(58, 27);
+            this.label11.TabIndex = 134;
+            this.label11.Text = "Color";
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.txtColor);
+            this.panel8.Location = new System.Drawing.Point(288, 188);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(238, 60);
+            this.panel8.TabIndex = 133;
+            // 
+            // txtColor
+            // 
+            this.txtColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtColor.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtColor.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.txtColor.Location = new System.Drawing.Point(13, 15);
+            this.txtColor.Name = "txtColor";
+            this.txtColor.Size = new System.Drawing.Size(208, 30);
+            this.txtColor.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label12.Location = new System.Drawing.Point(95, 158);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 27);
+            this.label12.TabIndex = 136;
+            this.label12.Text = "Tipo";
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.txtTipo);
+            this.panel10.Location = new System.Drawing.Point(8, 188);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(238, 60);
+            this.panel10.TabIndex = 135;
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtTipo.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipo.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.txtTipo.Location = new System.Drawing.Point(13, 15);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(208, 30);
+            this.txtTipo.TabIndex = 0;
+            // 
             // FormVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1084, 573);
+            this.ClientSize = new System.Drawing.Size(1400, 612);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEliminarVeh);
@@ -452,6 +570,12 @@
             this.panel5.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -487,5 +611,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtMatricula;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox txtColor;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.TextBox txtTipo;
     }
 }

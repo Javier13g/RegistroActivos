@@ -70,7 +70,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(170, 80);
+            this.pictureBox1.Location = new System.Drawing.Point(325, 65);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(278, 206);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -95,9 +95,9 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(650, 0);
+            this.panel1.Location = new System.Drawing.Point(982, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(418, 534);
+            this.panel1.Size = new System.Drawing.Size(418, 612);
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
@@ -298,7 +298,7 @@
             this.labelCorreo.AutoSize = true;
             this.labelCorreo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCorreo.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.labelCorreo.Location = new System.Drawing.Point(206, 325);
+            this.labelCorreo.Location = new System.Drawing.Point(361, 310);
             this.labelCorreo.Name = "labelCorreo";
             this.labelCorreo.Size = new System.Drawing.Size(49, 16);
             this.labelCorreo.TabIndex = 16;
@@ -310,7 +310,7 @@
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.labelNombre.Location = new System.Drawing.Point(262, 294);
+            this.labelNombre.Location = new System.Drawing.Point(417, 279);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(102, 16);
             this.labelNombre.TabIndex = 15;
@@ -321,7 +321,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(250, 26);
+            this.label1.Location = new System.Drawing.Point(405, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 32);
             this.label1.TabIndex = 17;
@@ -333,7 +333,7 @@
             this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(279, 390);
+            this.linkLabel1.Location = new System.Drawing.Point(434, 375);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(103, 20);
             this.linkLabel1.TabIndex = 91;
@@ -346,7 +346,7 @@
             this.labelPosicion.AutoSize = true;
             this.labelPosicion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPosicion.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.labelPosicion.Location = new System.Drawing.Point(265, 346);
+            this.labelPosicion.Location = new System.Drawing.Point(420, 331);
             this.labelPosicion.Name = "labelPosicion";
             this.labelPosicion.Size = new System.Drawing.Size(57, 16);
             this.labelPosicion.TabIndex = 92;
@@ -357,7 +357,7 @@
             this.labelCon.AutoSize = true;
             this.labelCon.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCon.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.labelCon.Location = new System.Drawing.Point(265, 369);
+            this.labelCon.Location = new System.Drawing.Point(420, 354);
             this.labelCon.Name = "labelCon";
             this.labelCon.Size = new System.Drawing.Size(57, 16);
             this.labelCon.TabIndex = 93;
@@ -367,8 +367,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1068, 534);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.ClientSize = new System.Drawing.Size(1400, 612);
             this.Controls.Add(this.labelCon);
             this.Controls.Add(this.labelPosicion);
             this.Controls.Add(this.linkLabel1);

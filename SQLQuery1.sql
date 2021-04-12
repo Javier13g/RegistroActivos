@@ -16,7 +16,7 @@ ID_Usuario INT FOREIGN KEY(ID_Usuario) REFERENCES USUARIOS(ID_Usuario)
 CREATE TABLE USUARIOS (
 ID_Usuario INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
 Nombre_Usuario VARCHAR(20) NOT NULL,
-Contrase�a VARCHAR(20) NOT NULL,
+Contraseña VARCHAR(20) NOT NULL,
 Correo VARCHAR(50) NOT NULL,
 Cargo VARCHAR(40) NOT NULL,
 );
@@ -30,22 +30,22 @@ as
 insert into USUARIOS values (@nombre,@password,@correo,@cargo)
 go
 
-CREATE PROC EditarPatentes
+CREATE PROC EditarUsuarios
 @nombre varchar(20),
-@descripcion varchar(100),
-@valor float,
-@tipo varchar(12),
+@password varchar(20),
+@correo varchar(50),
+@cargo varchar(40),
 @id int
 as
-update PATENTE set  Nombre=@nombre, Descripción=@descripcion, Valor=@valor,Tipo_Activo=@tipo
-where ID_Patente=@id
+update USUARIOS set  Nombre_Usuario=@nombre, Contraseña=@password, Correo=@correo,Cargo=@cargo
+where ID_Usuario=@id
 go
 
-CREATE PROC EliminarPatente
+CREATE PROC EliminarUsuarios
 
 @id int
 as
-delete from PATENTE where ID_Patente=@id
+delete from USUARIOS where ID_Usuario=@id
 go
 
 CREATE PROC MostrarUsuario
@@ -84,36 +84,50 @@ SELECT * FROM ACTIVOS
 
 CREATE TABLE TERRENOS (
 ID_Terreno INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
-Tama�o DECIMAL (20,2) NOT NULL,
+Tamaño DECIMAL (20,2) NOT NULL,
 Matricula_Titulo  VARCHAR(13) NOT NULL,
 Designacion_catastral VARCHAR(13) NOT NULL,
+Latitud DOUBLE PRECISION not null,
+Longitud DOUBLE PRECISION not null,
+Provincia VARCHAR (25) NOT NULL,
 Valor DECIMAL (38,2) NOT NULL,
 Tipo_Activo VARCHAR(12) NOT NULL
 );
 
+insert into TERRENOS values (100.15,'13g4sfd4','123acFjv', 19.20561, -69.33685, 'Samana', 155.52,'Tangible')
+insert into TERRENOS values (100.15,'13g4sfd4','123acFjv', 19.84826, -71.64597, 'Monte Cristi', 155.52,'Tangible')
+ drop table TERRENOS
 SELECT SUM(Valor) AS ValorTerrenos FROM TERRENOS;
-
+SELECT * from TERRENOS
 
 CREATE PROC AgregarTerreno
-@tama�o decimal(20,2),
+@tamaño decimal(20,2),
 @matricula varchar(13),
 @catastral varchar(13),
+@latitud double PRECISION,
+@longitud DOUBLE PRECISION,
+@provincia varchar(25),
 @valor decimal(38,2),
 @tipo varchar(23)
 as
-insert into TERRENOS values (@tama�o,@matricula,@catastral,@valor,@tipo)
+insert into TERRENOS values (@tamaño,@matricula,@catastral,@latitud,@longitud,@provincia,@valor,@tipo)
 go
 
+drop PROCEDURE EditarTerreno
 CREATE PROC EditarTerreno
-@tama�o decimal(20,2),
+@tamaño decimal(20,2),
 @matricula varchar(13),
 @catastral varchar(13),
+@latitud double PRECISION,
+@longitud DOUBLE PRECISION,
+@provincia varchar(25),
 @valor decimal(38,2),
 @tipo varchar(23),
 @id int
 as
-update TERRENOS set Tama�o=@tama�o, Matricula_Titulo=@matricula, 
-Designacion_catastral=@catastral, Valor=@valor, Tipo_Activo=@tipo
+update TERRENOS set Tamaño=@tamaño, Matricula_Titulo=@matricula, 
+Designacion_catastral=@catastral, Latitud=@latitud, Longitud=@longitud,
+Provincia=@provincia,Valor=@valor, Tipo_Activo=@tipo
 where ID_Terreno=@id
 go
 
@@ -147,37 +161,49 @@ CREATE TABLE VEHICULOS (
 ID_Vehiculo INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
 Marca  VARCHAR(20) NOT NULL,
 Modelo VARCHAR(13) NOT NULL,
-A�o VARCHAR(5) NOT NULL,
+Año VARCHAR(5) NOT NULL,
+Matricula varchar(15) NOT NULL,
 Tipo  VARCHAR(13) NOT NULL,
+Tipo2 VARCHAR(13) NOT NULL,
+Color VARCHAR(13) NOT NULL,
 Combustible  VARCHAR(12) NOT NULL,
 Valor float NOT NULL,
 Tipo_Activo VARCHAR(12) NOT NULL
 );
 
+drop TABLE VEHICULOS
+drop PROCEDURE EditarVehiculos
 CREATE PROC AgregarVehiculos
 @marca varchar(20),
 @modelo varchar(13),
 @year varchar(13),
+@matricula varchar(15),
 @tipo varchar(23),
+@tipo2 varchar(13),
+@color varchar(13),
 @combustible varchar(12),
 @valor float,
 @tipoActivo varchar(12)
 as
-insert into VEHICULOS values (@marca,@modelo,@year,@tipo,@combustible,@valor,@tipoActivo)
+insert into VEHICULOS values (@marca,@modelo,@year,@matricula,@tipo,@tipo2,@color,@combustible,@valor,@tipoActivo)
 go
 
+drop PROCEDURE EditarVehiculos
 CREATE PROC EditarVehiculos
 @marca varchar(20),
 @modelo varchar(13),
 @year varchar(13),
+@matricula varchar(15),
 @tipo varchar(23),
+@tipo2 varchar(13),
+@color varchar(13),
 @combustible varchar(12),
 @valor float,
 @tipoActivo varchar(12),
 @id int
 as
-update VEHICULOS set Marca=@marca, Modelo=@modelo,A�o=@year, Tipo=@tipo,
-Combustible=@combustible, Valor=@valor, Tipo_Activo=@tipoActivo
+update VEHICULOS set Marca=@marca, Modelo=@modelo,Año=@year,Matricula=@matricula, Tipo=@tipo,
+Tipo2=@tipo2,Color=@color, Combustible=@combustible, Valor=@valor, Tipo_Activo=@tipoActivo
 where ID_Vehiculo=@id
 go
 
@@ -199,20 +225,35 @@ go
 exec MostrarVehiculos
 select count(*) as Cantidad_Vehiculos from VEHICULOS
 
+DROP TABLE EDIFICACIONES
 CREATE TABLE EDIFICACIONES (
 ID_Edificacion INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
-Tama�o DECIMAL (20,2) NOT NULL,
+Tamaño DECIMAL (20,2) NOT NULL,
+Latitud DOUBLE PRECISION NOT NULL,
+Longitud DOUBLE PRECISION NOT NULL,
 Valor float NOT NULL,
 Tipo_Activo VARCHAR(12) NOT NULL
 )
 
+ CREATE PROC AgregarEdificacion
+@tamaño decimal(20,2),
+@latitud DOUBLE PRECISION,
+@longitud DOUBLE PRECISION,
+@valor float,
+@tipo varchar(12)
+as
+insert into EDIFICACIONES values (@tamaño,@latitud,@longitud,@valor,@tipo)
+go
+
 CREATE PROC EditarEdificios
-@tama�o decimal(20,2),
+@tamaño decimal(20,2),
+@latitud DOUBLE PRECISION,
+@longitud DOUBLE PRECISION,
 @valor float,
 @tipo varchar(12),
 @id int
 as
-update EDIFICACIONES set Tama�o=@tama�o, Valor=@valor,Tipo_Activo=@tipo
+update EDIFICACIONES set Tamaño=@tamaño,Latitud=@latitud,Longitud=@longitud, Valor=@valor,Tipo_Activo=@tipo
 where ID_Edificacion=@id
 go
 
@@ -233,30 +274,29 @@ select * from EDIFICACIONES
 go
 exec MostrarEdificacion
 
-CREATE PROC AgregarEdificacion
-@tama�o decimal(20,2),
-@valor float,
-@tipo varchar(12)
-as
-insert into EDIFICACIONES values (@tama�o,@valor,@tipo)
-go
+
 
 CREATE TABLE MAQUINARIA (
 ID_Maquinaria INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
 Tipo_Maquinaria VARCHAR(20) NOT NULL,
 Valor float NOT NULL,
-Tipo_Activo VARCHAR(12) NOT NULL
+Tipo_Activo VARCHAR(12) NOT NULL,
+Matricula VARCHAR(12) NOT NULL,
+Descripcion VARCHAR(100)
 )
-DROP TABLE MAQUINARIA
+SELECT * FROM MAQUINARIA
 DROP TABLE ACTIVOS
 
+drop PROCEDURE EditarMaquinaria
 CREATE PROC EditarMaquinaria
 @tipoM varchar(20),
 @valor float,
 @tipo varchar(12),
-@id int
+@id int,
+@matricula VARCHAR(12),
+@descripcion VARCHAR(100)
 as
-update MAQUINARIA set Tipo_Maquinaria=@tipoM, Valor=@valor,Tipo_Activo=@tipo
+update MAQUINARIA set Tipo_Maquinaria=@tipoM, Valor=@valor,Tipo_Activo=@tipo,Matricula=@matricula,Descripcion=@descripcion
 where ID_Maquinaria=@id
 go
 
@@ -274,12 +314,15 @@ select * from MAQUINARIA
 go
 exec MostrarMaquinaria
 
+drop PROCEDURE AgregarMaquinaria
 CREATE PROC AgregaMaquinaria
 @tipoM varchar(20),
 @valor float,
-@tipo varchar(12)
+@tipo varchar(12),
+@matricula VARCHAR(12),
+@descripcion VARCHAR(100)
 as
-insert into MAQUINARIA values (@tipoM,@valor,@tipo)
+insert into MAQUINARIA values (@tipoM,@valor,@tipo,@matricula,@descripcion)
 go
 
 

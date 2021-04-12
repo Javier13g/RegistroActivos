@@ -27,7 +27,8 @@ namespace CapaDatos
         }
 
         public void AgregarVehiculos(string marca, string modelo,
-            string year, string tipo, string combustible, float valor, string activo)
+            string year, string matricula, string tipo, string tipo2, string color,
+            string combustible, float valor, string activo)
         {
             comandoVehiculos.Connection = ConexionVehiculos.ConexionAbierta();
             comandoVehiculos.CommandText = "AgregarVehiculos";
@@ -35,7 +36,10 @@ namespace CapaDatos
             comandoVehiculos.Parameters.AddWithValue("@marca", marca);
             comandoVehiculos.Parameters.AddWithValue("@modelo", modelo);
             comandoVehiculos.Parameters.AddWithValue("@year", year);
+            comandoVehiculos.Parameters.AddWithValue("@matricula", matricula);
             comandoVehiculos.Parameters.AddWithValue("@tipo", tipo);
+            comandoVehiculos.Parameters.AddWithValue("@tipo2", tipo2);
+            comandoVehiculos.Parameters.AddWithValue("@color", color);
             comandoVehiculos.Parameters.AddWithValue("@combustible", combustible);
             comandoVehiculos.Parameters.AddWithValue("@valor", valor);
             comandoVehiculos.Parameters.AddWithValue("@tipoActivo", activo);
@@ -44,8 +48,8 @@ namespace CapaDatos
         }
 
         public void EditarVehiculos(string marca, string modelo,
-            string year, string tipo, string combustible, float valor, string activo,
-            int ID_Vehiculo)
+            string year, string matricula, string tipo, string tipo2, string color,
+            string combustible, float valor, string activo, int ID_Vehiculo)
         {
             comandoVehiculos.Connection = ConexionVehiculos.ConexionAbierta();
             comandoVehiculos.CommandText = "EditarVehiculos";
@@ -53,7 +57,10 @@ namespace CapaDatos
             comandoVehiculos.Parameters.AddWithValue("@marca", marca);
             comandoVehiculos.Parameters.AddWithValue("@modelo", modelo);
             comandoVehiculos.Parameters.AddWithValue("@year", year);
+            comandoVehiculos.Parameters.AddWithValue("@matricula", matricula);
             comandoVehiculos.Parameters.AddWithValue("@tipo", tipo);
+            comandoVehiculos.Parameters.AddWithValue("@tipo2", tipo2);
+            comandoVehiculos.Parameters.AddWithValue("@color", color);
             comandoVehiculos.Parameters.AddWithValue("@combustible", combustible);
             comandoVehiculos.Parameters.AddWithValue("@valor", valor);
             comandoVehiculos.Parameters.AddWithValue("@tipoActivo", activo);

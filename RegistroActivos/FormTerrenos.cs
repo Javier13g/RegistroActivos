@@ -13,10 +13,23 @@ using iTextSharp.text.pdf;
 using System.IO;
 using System.Data.SqlClient;
 
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
+
 namespace RegistroActivos
 {
     public partial class FormTerrenos : Form
     {
+        GMarkerGoogle marker;
+        GMapOverlay markerOverlay;
+        DataTable dt;
+
+        int filaSeleccionada = 0;
+        double LatInicial = 18.735693;
+        double LogInicial = -70.162651;
+
         CN_Terrenos objectoTerreno = new CN_Terrenos();
         private string id_Terreno = null;
         private bool editar = false;
@@ -30,7 +43,26 @@ namespace RegistroActivos
         private void FormTerrenos_Load(object sender, EventArgs e)
         {
             MostrarTerrenos();
-            
+            gMapControl1.DragButton = MouseButtons.Left;
+            gMapControl1.CanDragMap = true;
+            gMapControl1.MapProvider = GMapProviders.GoogleMap;
+            gMapControl1.Position = new PointLatLng(LatInicial, LogInicial);
+            gMapControl1.MinZoom = 0;
+            gMapControl1.MaxZoom = 24;
+            gMapControl1.Zoom = 9;
+            gMapControl1.AutoScroll = true;
+
+            //MARCADOR
+            markerOverlay = new GMapOverlay("Marcador");
+            marker = new GMarkerGoogle(new PointLatLng(
+                LatInicial, LogInicial), GMarkerGoogleType.green);
+            markerOverlay.Markers.Add(marker);
+
+            //agregar tooltip
+            marker.ToolTipMode = MarkerTooltipMode.Always;
+            marker.ToolTipText = string.Format("Ubicacion: \n Latitud" +
+                "{0} \n Longitud: {1}",LatInicial, LogInicial);
+            gMapControl1.Overlays.Add(markerOverlay);
         }
 
         
@@ -181,7 +213,8 @@ namespace RegistroActivos
             if (editar == false)
             {
                 if (txtDimension.Text == "" || txtMatricula.Text == "" || txtDesignacion.Text == ""
-                    || txtValor.Text == "" || comboBoxTipo.Text == "")
+                    || txtValor.Text == "" || comboBoxTipo.Text == "" || txtLatitud.Text == ""
+                    || txtLongitud.Text == "" || txtProvincia.Text == "")
                 {
                     MessageBox.Show("Algun campo esta vacio, revise", "Error!!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -194,6 +227,9 @@ namespace RegistroActivos
                             Convert.ToDecimal(txtDimension.Text),
                             txtMatricula.Text,
                             txtDesignacion.Text,
+                            Convert.ToDouble(txtLatitud.Text),
+                            Convert.ToDouble(txtLongitud.Text),
+                            txtProvincia.Text,
                             Convert.ToDecimal(txtValor.Text),
                             comboBoxTipo.Text
                             );
@@ -217,6 +253,9 @@ namespace RegistroActivos
                         Convert.ToDecimal(txtDimension.Text),
                         txtMatricula.Text,
                         txtDesignacion.Text,
+                        Convert.ToDouble(txtLatitud.Text),
+                        Convert.ToDouble(txtLongitud.Text),
+                        txtProvincia.Text,
                         Convert.ToDecimal(txtValor.Text),
                         comboBoxTipo.Text,
                         Convert.ToInt32(id_Terreno.ToString())
@@ -245,6 +284,12 @@ namespace RegistroActivos
                     txtMatricula.Text = dataGridView1.CurrentRow.Cells["Matricula_Titulo"]
                         .Value.ToString();
                     txtDesignacion.Text = dataGridView1.CurrentRow.Cells["Designacion_Catastral"]
+                        .Value.ToString();
+                    txtLatitud.Text = dataGridView1.CurrentRow.Cells["Latitud"]
+                        .Value.ToString();
+                    txtLongitud.Text = dataGridView1.CurrentRow.Cells["Longitud"]
+                        .Value.ToString();
+                    txtProvincia.Text = dataGridView1.CurrentRow.Cells["Provincia"]
                         .Value.ToString();
                     txtValor.Text = dataGridView1.CurrentRow.Cells["Valor"]
                         .Value.ToString();
@@ -293,6 +338,26 @@ namespace RegistroActivos
             dataGridView1.DataSource = dt;
 
             con.Close();
+        }
+
+        private void SeleccionarUbicacion(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                filaSeleccionada = e.RowIndex;
+
+                txtMatricula.Text = dataGridView1.Rows[filaSeleccionada].Cells[2].Value.ToString();
+                txtLatitud.Text = dataGridView1.Rows[filaSeleccionada].Cells[4].Value.ToString();
+                txtLongitud.Text = dataGridView1.Rows[filaSeleccionada].Cells[5].Value.ToString();
+                marker.Position = new PointLatLng(Convert.ToDouble(txtLatitud.Text),
+                    Convert.ToDouble(txtLongitud.Text));
+
+                gMapControl1.Position = marker.Position;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("error debido a "+ex);
+            }
         }
     }
 }

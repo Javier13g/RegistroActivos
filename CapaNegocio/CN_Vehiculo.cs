@@ -20,13 +20,17 @@ namespace CapaNegocio
         }
 
         public void AgregarVehiculos(string marca, string modelo,
-            string year, string tipo, string combustible, float valor, string activo)
+            string year, string matricula, string tipo, string tipo2, string color,
+            string combustible, float valor, string activo)
         {
             objectVehiculos.AgregarVehiculos(
                 marca,
                 modelo,
                 year,
+                matricula,
                 tipo,
+                tipo2,
+                color,
                 combustible,
                 valor,
                 activo
@@ -34,14 +38,17 @@ namespace CapaNegocio
         }
 
         public void EditarVehiculos(string marca, string modelo,
-            string year, string tipo, string combustible, float valor, string activo,
-            int ID_Vehiculo)
+            string year, string matricula, string tipo, string tipo2, string color,
+            string combustible, float valor, string activo, int ID_Vehiculo)
         {
             objectVehiculos.EditarVehiculos(
                 marca,
                 modelo,
                 year,
+                matricula,
                 tipo,
+                tipo2,
+                color,
                 combustible,
                 valor,
                 activo,

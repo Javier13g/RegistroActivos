@@ -44,7 +44,7 @@ namespace RegistroActivos
             if (editar == false)
             {
                 if (txtTipoMaquinaria.Text == "" || txtValorMaquinaria.Text == ""
-                    || TipoActivoMa.Text == "")
+                    || TipoActivoMa.Text == "" || txtMatricula.Text == "" || txtDescripcion.Text == "")
                 {
                     MessageBox.Show("Algun campo esta vacio, revise", "Error!!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -56,7 +56,9 @@ namespace RegistroActivos
                         objectoMaqui.AgregarMaquinaria(
                             txtTipoMaquinaria.Text,
                             Convert.ToInt32(txtValorMaquinaria.Text),
-                            TipoActivoMa.Text
+                            TipoActivoMa.Text,
+                            txtMatricula.Text,
+                            txtDescripcion.Text
                             );
                         MessageBox.Show("Maquinaria guardada");
                         MostrarMaquinaria();
@@ -76,6 +78,8 @@ namespace RegistroActivos
                         txtTipoMaquinaria.Text,
                         Convert.ToInt32(txtValorMaquinaria.Text),
                         TipoActivoMa.Text,
+                        txtMatricula.Text,
+                        txtDescripcion.Text,
                         Convert.ToInt32(id_maquinaria.ToString())
                         );
                     MessageBox.Show("Se edito la maquinaria correspondiente al ID "
@@ -118,6 +122,10 @@ namespace RegistroActivos
                         .Value.ToString();
                     txtValorMaquinaria.Text = dataGridView1.CurrentRow.Cells["Valor"]
                         .Value.ToString();
+                    txtMatricula.Text = dataGridView1.CurrentRow.Cells["Matricula"]
+                        .Value.ToString();
+                    txtDescripcion.Text = dataGridView1.CurrentRow.Cells["Descripcion"]
+                        .Value.ToString();
                     id_maquinaria = dataGridView1.CurrentRow.Cells["ID_Maquinaria"]
                         .Value.ToString();
                 }
@@ -134,7 +142,8 @@ namespace RegistroActivos
         {
             txtValorMaquinaria.Clear();
             txtTipoMaquinaria.Clear();
-            TipoActivoMa.Items.Clear();
+            TipoActivoMa.ResetText();
+            txtMatricula.Clear();
         }
 
         private void txtValorMaquinaria_KeyPress(object sender, KeyPressEventArgs e)

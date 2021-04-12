@@ -26,24 +26,30 @@ namespace CapaDatos
             return tablaEdificacion;
         }
 
-        public void AgregarEdificio(decimal dimension, float valor, string tipo)
+        public void AgregarEdificio(decimal dimension, double latitud, double longitud,
+            float valor, string tipo)
         {
             comandoEdificacion.Connection = ConexionEdificacion.ConexionAbierta();
             comandoEdificacion.CommandText = "AgregarEdificacion";
             comandoEdificacion.CommandType = CommandType.StoredProcedure;
             comandoEdificacion.Parameters.AddWithValue("@tamaño", dimension);
+            comandoEdificacion.Parameters.AddWithValue("@latitud", latitud);
+            comandoEdificacion.Parameters.AddWithValue("@longitud", longitud);
             comandoEdificacion.Parameters.AddWithValue("@valor", valor);
             comandoEdificacion.Parameters.AddWithValue("@tipo", tipo);
             comandoEdificacion.ExecuteNonQuery();
             comandoEdificacion.Parameters.Clear();
         }
 
-        public void EditarEdificio(decimal dimension, float valor, string tipo, int ID_Edificio)
+        public void EditarEdificio(decimal dimension, double latitud, double longitud,
+            float valor, string tipo, int ID_Edificio)
         {
             comandoEdificacion.Connection = ConexionEdificacion.ConexionAbierta();
             comandoEdificacion.CommandText = "EditarEdificios";
             comandoEdificacion.CommandType = CommandType.StoredProcedure;
             comandoEdificacion.Parameters.AddWithValue("@tamaño", dimension);
+            comandoEdificacion.Parameters.AddWithValue("@latitud", latitud);
+            comandoEdificacion.Parameters.AddWithValue("@longitud", longitud);
             comandoEdificacion.Parameters.AddWithValue("@valor", valor);
             comandoEdificacion.Parameters.AddWithValue("@tipo", tipo);
             comandoEdificacion.Parameters.AddWithValue("@id", ID_Edificio);

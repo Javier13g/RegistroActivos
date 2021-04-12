@@ -20,23 +20,29 @@ namespace CapaNegocio
             return TablaMaquinaria;
         }
 
-        public void AgregarMaquinaria(string tipoMaquina, float valor, string tipo)
+        public void AgregarMaquinaria(string tipoMaquina, float valor, string tipo,
+            string maquinaria, string descripcion)
         {
             objectMaquinaria.AgregarMaquinaria(
                 tipoMaquina,
                 valor,
-                tipo
+                tipo,
+                maquinaria,
+                descripcion
                 );
         }
 
         public void EditarMaquinaria(string tipoMaquina, float valor, string tipo,
-            int ID_Maquinaria)
+            string maquinaria, string descripcion, int ID_Maquinaria)
         {
             objectMaquinaria.EditarMaquinaria(
                 tipoMaquina,
                 valor,
                 tipo,
+                maquinaria,
+                descripcion,
                 ID_Maquinaria
+                
                 );
         }
 

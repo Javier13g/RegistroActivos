@@ -19,19 +19,25 @@ namespace CapaNegocio
             return TablaEdificacion;
         }
 
-        public void AgregarEdificios(decimal dimension, float valor, string tipo)
+        public void AgregarEdificios(decimal dimension, double latitud, double longitud,
+            float valor, string tipo)
         {
             objectEdificacion.AgregarEdificio(
                 dimension,
+                latitud,
+                longitud,
                 valor,
                 tipo
                 );
         }
 
-        public void EditarEdificios(decimal dimension, float valor, string tipo, int ID_Edificacion)
+        public void EditarEdificios(decimal dimension, double latitud, double longitud,
+            float valor, string tipo, int ID_Edificacion)
         {
             objectEdificacion.EditarEdificio(
                 dimension,
+                longitud,
+                valor,
                 valor,
                 tipo,
                 ID_Edificacion

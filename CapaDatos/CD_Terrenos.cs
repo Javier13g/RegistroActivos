@@ -27,7 +27,8 @@ namespace CapaDatos
         }
 
         public void AgregarTerrenos(decimal Dimension, string Matricula,
-            string Catastral, decimal Valor, string TipoActivo)
+            string Catastral, double latitud, double longitud, string provincia,
+            decimal Valor, string TipoActivo)
         {
             comandoTerrenos.Connection = ConexionTerrenos.ConexionAbierta();
             comandoTerrenos.CommandText = "AgregarTerreno";
@@ -35,14 +36,19 @@ namespace CapaDatos
             comandoTerrenos.Parameters.AddWithValue("@tamaño", Dimension);
             comandoTerrenos.Parameters.AddWithValue("@matricula", Matricula);
             comandoTerrenos.Parameters.AddWithValue("@catastral", Catastral);
+            comandoTerrenos.Parameters.AddWithValue("@latitud", latitud);
+            comandoTerrenos.Parameters.AddWithValue("@longitud", longitud);
+            comandoTerrenos.Parameters.AddWithValue("@provincia", provincia);
             comandoTerrenos.Parameters.AddWithValue("@valor", Valor);
             comandoTerrenos.Parameters.AddWithValue("@tipo", TipoActivo);
+            
             comandoTerrenos.ExecuteNonQuery();
             comandoTerrenos.Parameters.Clear();
         }
 
         public void EditarTerrenos(decimal Dimension, string Matricula,
-            string Catastral, decimal Valor, string TipoActivo, int ID_Terreno)
+            string Catastral, double latitud, double longitud, string provincia,
+            decimal Valor, string TipoActivo, int ID_Terreno)
         {
             comandoTerrenos.Connection = ConexionTerrenos.ConexionAbierta();
             comandoTerrenos.CommandText = "EditarTerreno";
@@ -50,6 +56,9 @@ namespace CapaDatos
             comandoTerrenos.Parameters.AddWithValue("@tamaño", Dimension);
             comandoTerrenos.Parameters.AddWithValue("@matricula", Matricula);
             comandoTerrenos.Parameters.AddWithValue("@catastral", Catastral);
+            comandoTerrenos.Parameters.AddWithValue("@latitud", latitud);
+            comandoTerrenos.Parameters.AddWithValue("@longitud", longitud);
+            comandoTerrenos.Parameters.AddWithValue("@provincia", provincia);
             comandoTerrenos.Parameters.AddWithValue("@valor", Valor);
             comandoTerrenos.Parameters.AddWithValue("@tipo", TipoActivo);
             comandoTerrenos.Parameters.AddWithValue("@id", ID_Terreno);

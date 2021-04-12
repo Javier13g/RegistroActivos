@@ -20,24 +20,32 @@ namespace CapaNegocio
         }
 
         public void AgregarTerrenos(decimal Dimension, string Matricula,
-            string Catastral, decimal Valor, string TipoActivo)
+            string Catastral, double latitud, double longitud, string provincia,
+            decimal Valor, string TipoActivo)
         {
             objectTerrenos.AgregarTerrenos(
                 Dimension,
                 Matricula,
                 Catastral,
+                latitud,
+                longitud,
+                provincia,
                 Valor,
                 TipoActivo
                 );
         }
 
         public void EditarTerrenos(decimal Dimension, string Matricula,
-            string Catastral, decimal Valor, string TipoActivo, int ID_Terreno)
+            string Catastral, double latitud, double longitud, string provincia,
+            decimal Valor, string TipoActivo, int ID_Terreno)
         {
             objectTerrenos.EditarTerrenos(
                 Dimension,
                 Matricula,
                 Catastral,
+                latitud,
+                longitud,
+                provincia,
                 Valor,
                 TipoActivo,
                 ID_Terreno

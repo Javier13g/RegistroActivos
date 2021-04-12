@@ -26,7 +26,8 @@ namespace CapaDatos
             return tablaMaquinaria;
         }
 
-        public void AgregarMaquinaria(string tipoMaquina, float valor, string tipo)
+        public void AgregarMaquinaria(string tipoMaquina, float valor, string tipo,
+            string maquinaria, string descripcion)
         {
             comandoMaquinaria.Connection = ConexionMaquinaria.ConexionAbierta();
             comandoMaquinaria.CommandText = "AgregaMaquinaria";
@@ -34,12 +35,14 @@ namespace CapaDatos
             comandoMaquinaria.Parameters.AddWithValue("@tipoM", tipoMaquina);
             comandoMaquinaria.Parameters.AddWithValue("@valor", valor);
             comandoMaquinaria.Parameters.AddWithValue("@tipo", tipo);
+            comandoMaquinaria.Parameters.AddWithValue("@matricula", maquinaria);
+            comandoMaquinaria.Parameters.AddWithValue("@descripcion", descripcion);
             comandoMaquinaria.ExecuteNonQuery();
             comandoMaquinaria.Parameters.Clear();
         }
 
         public void EditarMaquinaria(string tipoMaquina, float valor, string tipo,
-            int ID_Maquinaria )
+            string maquinaria, string descripcion, int ID_Maquinaria)
         {
             comandoMaquinaria.Connection = ConexionMaquinaria.ConexionAbierta();
             comandoMaquinaria.CommandText = "EditarMaquinaria";
@@ -47,6 +50,8 @@ namespace CapaDatos
             comandoMaquinaria.Parameters.AddWithValue("@tipoM", tipoMaquina);
             comandoMaquinaria.Parameters.AddWithValue("@valor", valor);
             comandoMaquinaria.Parameters.AddWithValue("@tipo", tipo);
+            comandoMaquinaria.Parameters.AddWithValue("@matricula", maquinaria);
+            comandoMaquinaria.Parameters.AddWithValue("@descripcion", descripcion);
             comandoMaquinaria.Parameters.AddWithValue("@id", ID_Maquinaria);
             comandoMaquinaria.ExecuteNonQuery();
             comandoMaquinaria.Parameters.Clear();

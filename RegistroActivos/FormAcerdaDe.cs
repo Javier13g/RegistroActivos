@@ -36,5 +36,10 @@ namespace RegistroActivos
         {
             System.Diagnostics.Process.Start("https://www.policianacional.gob.do");
         }
+
+        private void FormAcerdaDe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

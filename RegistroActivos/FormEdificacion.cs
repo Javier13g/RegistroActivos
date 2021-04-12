@@ -12,11 +12,23 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
 using System.Data.SqlClient;
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 
 namespace RegistroActivos
 {
     public partial class FormEdificacion : Form
     {
+        GMarkerGoogle marker;
+        GMapOverlay markerOverlay;
+        DataTable dt;
+
+        int filaSeleccionada = 0;
+        double LatInicial = 18.735693;
+        double LogInicial = -70.162651;
+
         CN_Edificacion objectoED = new CN_Edificacion();
         private string id_edificacion = null;
         private bool editar = false;
@@ -29,6 +41,26 @@ namespace RegistroActivos
         private void FormEdificacion_Load(object sender, EventArgs e)
         {
             MostrarEdificios();
+            gMapControl1.DragButton = MouseButtons.Left;
+            gMapControl1.CanDragMap = true;
+            gMapControl1.MapProvider = GMapProviders.GoogleMap;
+            gMapControl1.Position = new PointLatLng(LatInicial, LogInicial);
+            gMapControl1.MinZoom = 0;
+            gMapControl1.MaxZoom = 24;
+            gMapControl1.Zoom = 9;
+            gMapControl1.AutoScroll = true;
+
+            //MARCADOR
+            markerOverlay = new GMapOverlay("Marcador");
+            marker = new GMarkerGoogle(new PointLatLng(
+                LatInicial, LogInicial), GMarkerGoogleType.green);
+            markerOverlay.Markers.Add(marker);
+
+            //agregar tooltip
+            marker.ToolTipMode = MarkerTooltipMode.Always;
+            marker.ToolTipText = string.Format("Ubicacion: \n Latitud" +
+                "{0} \n Longitud: {1}", LatInicial, LogInicial);
+            gMapControl1.Overlays.Add(markerOverlay);
         }
 
         private void MostrarEdificios()
@@ -55,6 +87,8 @@ namespace RegistroActivos
                     {
                         objectoED.AgregarEdificios(
                             Convert.ToDecimal(txtDimensionEdi.Text),
+                            Convert.ToDouble(txtLatitud.Text),
+                            Convert.ToDouble(txtLongitud.Text),
                             Convert.ToInt32(txtValorEdificio.Text),
                             TipoActivoEd.Text
                             );
@@ -75,6 +109,8 @@ namespace RegistroActivos
                 {
                     objectoED.EditarEdificios(
                         Convert.ToDecimal(txtDimensionEdi.Text),
+                        Convert.ToDouble(txtLatitud.Text),
+                        Convert.ToDouble(txtLongitud.Text),
                         Convert.ToInt32(txtValorEdificio.Text),
                         TipoActivoEd.Text,
                         Convert.ToInt32(id_edificacion.ToString())
@@ -99,6 +135,10 @@ namespace RegistroActivos
                 {
                     editar = true;
                     txtDimensionEdi.Text = dataGridView1.CurrentRow.Cells["Tamaño"]
+                        .Value.ToString();
+                    txtLatitud.Text = dataGridView1.CurrentRow.Cells["Latitud"]
+                       .Value.ToString();
+                    txtLongitud.Text = dataGridView1.CurrentRow.Cells["Longitud"]
                         .Value.ToString();
                     TipoActivoEd.Text = dataGridView1.CurrentRow.Cells["Tipo_Activo"]
                         .Value.ToString();
@@ -242,6 +282,25 @@ namespace RegistroActivos
             dataGridView1.DataSource = dt;
 
             con.Close();
+        }
+
+        private void SeleccionarUbicacion(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                filaSeleccionada = e.RowIndex;
+
+                txtLatitud.Text = dataGridView1.Rows[filaSeleccionada].Cells[2].Value.ToString();
+                txtLongitud.Text = dataGridView1.Rows[filaSeleccionada].Cells[3].Value.ToString();
+                marker.Position = new PointLatLng(Convert.ToDouble(txtLatitud.Text),
+                    Convert.ToDouble(txtLongitud.Text));
+
+                gMapControl1.Position = marker.Position;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error debido a " + ex);
+            }
         }
     }
 }

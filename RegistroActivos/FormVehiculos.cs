@@ -49,9 +49,12 @@ namespace RegistroActivos
             txtAño.Clear();
             txtMarca.Clear();
             txtModelo.Clear();
-            comboBoxTipo.Items.Clear();
-            comboBoxComb.Items.Clear();
+            comboBoxTipo.ResetText();
+            comboBoxComb.ResetText();
             txtValorVehiculo.Clear();
+            txtMatricula.Clear();
+            txtColor.Clear();
+            txtTipo.Clear();
         }
 
         
@@ -171,7 +174,10 @@ namespace RegistroActivos
                             txtMarca.Text,
                             txtModelo.Text,
                             txtAño.Text,
+                            txtMatricula.Text,
                             comboBoxTipo.Text,
+                            txtTipo.Text,
+                            txtColor.Text,
                             comboBoxComb.Text,
                             Convert.ToInt32(txtValorVehiculo.Text),
                             TipoActivoVeh.Text
@@ -196,7 +202,10 @@ namespace RegistroActivos
                         txtMarca.Text,
                         txtModelo.Text,
                         txtAño.Text,
+                        txtMatricula.Text,
                         comboBoxTipo.Text,
+                        txtTipo.Text,
+                        txtColor.Text,
                         comboBoxComb.Text,
                         Convert.ToInt32(txtValorVehiculo.Text),
                         TipoActivoVeh.Text,
@@ -227,7 +236,13 @@ namespace RegistroActivos
                         .Value.ToString();
                     txtAño.Text = dataGridView1.CurrentRow.Cells["Año"]
                         .Value.ToString();
+                    txtMatricula.Text = dataGridView1.CurrentRow.Cells["Matricula"]
+                        .Value.ToString();
                     comboBoxTipo.Text = dataGridView1.CurrentRow.Cells["Tipo"]
+                        .Value.ToString();
+                    txtTipo.Text = dataGridView1.CurrentRow.Cells["Tipo2"]
+                        .Value.ToString();
+                    txtColor.Text = dataGridView1.CurrentRow.Cells["Color"]
                         .Value.ToString();
                     comboBoxComb.Text = dataGridView1.CurrentRow.Cells["Combustible"]
                         .Value.ToString();
@@ -253,9 +268,11 @@ namespace RegistroActivos
                 id_vehiculo = dataGridView1.CurrentRow.Cells["ID_Vehiculo"]
                         .Value.ToString();
                 objectoVehiculo.EliminarVehiculos(Convert.ToInt32(id_vehiculo.ToString()));
-                MessageBox.Show("Vehiculo " + txtModelo + " Eliminado");
+                MessageBox.Show("Vehiculo Eliminado");
                 MostrarVehiculos();
             }
+            else
+                MessageBox.Show("Seleccione el vehiculo");
         }
 
         SqlConnection con = new SqlConnection("Server=DESKTOP-ABURFAM; DataBase= RegistroActivos; integrated security= true");
@@ -265,7 +282,7 @@ namespace RegistroActivos
             SqlCommand cmd = con.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM VEHICULOS where Año like ('" + txtBuscar.Text + "%')";
+            cmd.CommandText = "SELECT * FROM VEHICULOS where Matricula like ('" + txtBuscar.Text + "%')";
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
